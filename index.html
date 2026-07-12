@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Money Kit — Members Access</title>
+<meta name="description" content="AI Money Kit member resources. 5 complete AI business systems: prompts, templates, scripts, pricing.">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; line-height: 1.6; color: #1a1a1a; background: #fafafa; }
+.nav { background: #fff; border-bottom: 1px solid #e5e7eb; padding: 16px 24px; }
+.nav-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+.logo { font-size: 20px; font-weight: 900; }
+.logo .accent { background: linear-gradient(135deg, #f59e0b 0%, #ef4444 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.cta-nav { color: #1a1a1a; text-decoration: none; font-weight: 600; font-size: 14px; }
+.container { max-width: 1100px; margin: 0 auto; padding: 40px 24px; }
+.access-box { background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); color: #fff; padding: 40px; border-radius: 16px; margin-bottom: 30px; text-align: center; }
+.access-box h1 { color: #fff; font-size: 32px; margin-bottom: 8px; }
+.access-box p { color: #cbd5e1; }
+.access-box input { width: 100%; max-width: 400px; padding: 12px; border-radius: 8px; border: 1px solid #475569; font-size: 16px; margin: 8px 0; }
+.access-box button { background: linear-gradient(135deg, #f59e0b 0%, #ef4444 100%); color: #fff; border: none; padding: 12px 24px; border-radius: 8px; font-weight: 700; cursor: pointer; }
+.system-block { background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; margin: 16px 0; overflow: hidden; }
+.system-header { background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); padding: 20px 24px; cursor: pointer; display: flex; align-items: center; gap: 16px; }
+.system-header:hover { background: #e2e8f0; }
+.system-icon { font-size: 32px; }
+.system-header h2 { font-size: 22px; margin: 0; }
+.system-header .status { background: #10b981; color: #fff; padding: 4px 10px; border-radius: 999px; font-size: 11px; font-weight: 800; margin-left: auto; }
+.system-header .status.coming { background: #94a3b8; }
+.system-content { padding: 0 24px; max-height: 0; overflow: hidden; transition: max-height 0.3s, padding 0.3s; }
+.system-content.open { max-height: 5000px; padding: 20px 24px; }
+.resource-list { list-style: none; }
+.resource-list li { padding: 12px 0; border-bottom: 1px solid #e5e7eb; }
+.resource-list li:last-child { border-bottom: none; }
+.resource-list .title { font-weight: 700; color: #1a1a1a; }
+.resource-list .desc { color: #6b7280; font-size: 14px; }
+.resource-list .type { display: inline-block; background: #f0f9ff; color: #0369a1; padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 700; margin-right: 8px; }
+.copy-btn { background: #1a1a1a; color: #fff; border: none; padding: 6px 12px; border-radius: 6px; cursor: pointer; font-size: 12px; margin-top: 4px; }
+.copy-btn:hover { background: #333; }
+.code-block { background: #0f172a; color: #e2e8f0; padding: 16px; border-radius: 8px; font-family: 'Courier New', monospace; font-size: 13px; line-height: 1.6; white-space: pre-wrap; margin: 8px 0; max-height: 400px; overflow-y: auto; }
+.upsell-banner { background: linear-gradient(135deg, #f59e0b 0%, #ef4444 100%); color: #fff; padding: 30px; border-radius: 12px; text-align: center; margin: 30px 0; }
+.upsell-banner h3 { color: #fff; margin-bottom: 8px; }
+.upsell-banner a { display: inline-block; background: #fff; color: #f59e0b; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 800; }
+footer { background: #0f172a; color: #94a3b8; padding: 30px 24px; text-align: center; font-size: 14px; }
+footer a { color: #f59e0b; }
+.access-gate { display: block; }
+.access-granted { display: none; }
+</style>
+</head>
+<body>
+
+<div class="nav">
+  <div class="nav-inner">
+    <div class="logo">AI Money <span class="accent">Kit</span> · Members</div>
+    <a href="https://lwy907919-a11y.github.io/ai-money-kit/" class="cta-nav">← Back to Home</a>
+  </div>
+</div>
+
+<div class="container">
+  <div class="access-box access-gate" id="accessGate">
+    <h1>🔒 Members-Only Access</h1>
+    <p>Enter your PayPal email to unlock all 5 systems + templates + scripts.</p>
+    <input type="email" id="memberEmail" placeholder="your@paypal-email.com" />
+    <br>
+    <button onclick="verifyAccess()">Unlock Access →</button>
+    <p id="accessMsg" style="margin-top:12px;font-size:14px;"></p>
+    <p style="font-size:12px;margin-top:16px;color:#64748b;">Don't have access yet? <a href="https://lwy907919-a11y.github.io/ai-money-kit/#pricing" style="color:#f59e0b;">Get the Kit →</a></p>
+  </div>
+
+  <div class="access-granted" id="accessGranted">
+    <h1 style="font-size:32px;margin-bottom:8px;">🎉 Welcome! Here's Everything You Bought</h1>
+    <p style="color:#6b7280;margin-bottom:24px;">All 5 systems, complete with prompts, templates, scripts, and setup guides. Lifetime access. Free updates.</p>
+
+    <!-- SYSTEM 1: AI RESUME SERVICE - FULL -->
+    <div class="system-block">
+      <div class="system-header" onclick="toggleSystem('s1')">
+        <div class="system-icon">💼</div>
+        <h2>System 1: AI Resume Service (FULL)</h2>
+        <span class="status">READY</span>
+      </div>
+      <div class="system-content open" id="s1">
+        <p><strong>What you get:</strong> Complete white-label resume service. Charge clients $99-299/resume. AI does the work, you collect the money.</p>
+
+        <h3 style="margin-top:20px;">📋 Client Intake Form (Copy-Paste)</h3>
+        <div class="code-block">CLIENT INTAKE FORM — AI Resume Service
+=========================================
+NAME: _____________________
+EMAIL: _____________________
+PHONE: _____________________
+
+1. What role are you targeting?
+   [Specific job title, company, industry]
+
+2. Walk me through your last 3 roles.
+   [Role 1: dates, company, what you did]
+   [Role 2: dates, company, what you did]
+   [Role 3: dates, company, what you did]
+
+3. What achievement are you most proud of?
+   [Specific result with numbers]
+
+4. What's a project that failed? What did you learn?
+
+5. Who do you work with day-to-day?
+   [Engineers, sales, executives, customers?]
+
+6. What metrics do you own or move?
+   [Revenue, users, NPS, conversion, etc.]
+
+7. What's a "hidden" skill most people don't have?
+
+8. What's the next job you want, and why are you qualified?
+=========================================</div>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+
+        <h3 style="margin-top:20px;">💰 Pricing Guide</h3>
+        <div class="code-block">PRICING STRUCTURE
+=========================================
+Starter Resume: $99
+- 1 resume rewrite
+- ATS optimization
+- 5-day delivery
+
+Standard: $199
+- 1 resume + 1 cover letter
+- ATS + LinkedIn optimization
+- 3-day delivery
+- 1 free revision
+
+Premium: $299
+- Everything in Standard
+- Mock interview (30 min)
+- Salary negotiation script
+- 5 free revisions
+- 24-hour delivery
+=========================================</div>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+
+        <h3 style="margin-top:20px;">📧 Client Outreach Templates (5)</h3>
+        <div class="code-block">OUTREACH 1: LinkedIn Connection
+=========================================
+Hi [Name],
+
+Saw your post about [specific thing they shared]. As a fellow [their role/industry], I help people land [X% more interviews] with AI-optimized resumes.
+
+Worth connecting? I share free resume tips weekly.
+
+[Your name]
+=========================================
+
+OUTREACH 2: LinkedIn DM (Day 3)
+=========================================
+Hey [Name],
+
+Quick question — if your resume could land 3x more interviews in 30 days, would that be worth 15 min?
+
+I built an AI that does exactly that. Helped [X] people land at [company names].
+
+Want to try it free?
+
+[Your name]
+=========================================
+
+OUTREACH 3: Email to Career Coach
+=========================================
+Subject: Quick question about your coaching practice
+
+Hi [Name],
+
+Saw you help [target audience] with career transitions. I built an AI tool that does 80% of the resume work in 60 seconds — you keep the high-margin coaching, the AI does the heavy lifting.
+
+Worth a 15-min demo? I'd show you how career coaches are charging $199/resume with 90% margin.
+
+[Your name]
+=========================================
+
+OUTREACH 4: Reddit r/JobSearch Comment
+=========================================
+"I was in the same boat 6 months ago. Tried [free AI tool] — it found 3 product launches I'd never put on my resume. Got 4 callbacks in 2 weeks. Worth trying."
+=========================================
+
+OUTREACH 5: Facebook Group Post
+=========================================
+"Just shipped a free AI resume tool that helped me land 4 interviews in 2 weeks after 6 months of 0 callbacks. Happy to share what I learned if anyone's in the job search. https://[your-link]"
+=========================================</div>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+
+        <h3 style="margin-top:20px;">⚙️ Setup (15 min)</h3>
+        <ol>
+          <li>Use the white-labeled HirePilot (URL below) as your tool</li>
+          <li>Send outreach templates above to 20 potential clients per day</li>
+          <li>When someone says yes, send them the intake form</li>
+          <li>After they fill it out, paste into HirePilot</li>
+          <li>Deliver the rewritten resume within 3 days</li>
+          <li>Collect payment via PayPal or Stripe</li>
+        </ol>
+
+        <p style="margin-top:20px;"><strong>Your white-labeled tool:</strong> <a href="https://lwy907919-a11y.github.io/hirepilot">https://lwy907919-a11y.github.io/hirepilot</a> (custom branding guide in Agency tier)</p>
+      </div>
+    </div>
+
+    <!-- SYSTEM 2: AI COLD EMAIL AGENCY - FULL -->
+    <div class="system-block">
+      <div class="system-header" onclick="toggleSystem('s2')">
+        <div class="system-icon">📧</div>
+        <h2>System 2: AI Cold Email Agency (FULL)</h2>
+        <span class="status">READY</span>
+      </div>
+      <div class="system-content" id="s2">
+        <p><strong>What you get:</strong> Run cold email for B2B clients. Charge $1,000-5,000/mo retainer. AI does the heavy lifting, you manage relationships.</p>
+
+        <h3 style="margin-top:20px;">📋 10 Cold Email Templates</h3>
+        <div class="code-block">COLD EMAIL TEMPLATES — 10 Proven Sequences
+=========================================
+
+TEMPLATE 1: Trigger Event (Best for warm leads)
+Subject: Saw [Company] just [event] — quick thought
+Body: Hi [Name],
+
+Congrats on [specific event]. I noticed [one specific insight about the event's impact on their business].
+
+I help [their role] at [their industry] cut [specific metric] by 30-50% in 60 days. Did that for [similar company] — they went from [before] to [after].
+
+Worth a 15-min call next week?
+
+Best,
+[Your name]
+
+---
+
+TEMPLATE 2: Pattern Interrupt (Best for cold prospects)
+Subject: don't reply
+Body: Most [target role] waste 10+ hours/week on [pain point].
+
+I built an AI that does it in 30 minutes. Free to try: [link]
+
+If it works, I'd love to show you how to deploy it for [their team]. 15 min?
+
+[Your name]
+
+---
+
+TEMPLATE 3: Direct Value (Best for warm intros)
+Subject: Quick question for [Name]
+Body: Hi [Name],
+
+[Mutual connection] mentioned you're focused on [specific goal] at [Company].
+
+One thing I help with: 50+ qualified leads/month for [their industry] without paid ads. Did that for [similar company] — [specific result].
+
+Worth a 15-min call?
+
+[Your name]
+
+---
+
+TEMPLATE 4: Case Study Lead (Best for skeptical buyers)
+Subject: How [similar company] got 50 leads in 14 days
+Body: Hi [Name],
+
+[Similar company] was in your position 30 days ago. Stuck at 5 leads/month.
+
+We deployed an AI cold email system. 14 days later: 50 qualified leads, 8 closed.
+
+If you're working on the same problem, I'd love to share the exact system. 15 min?
+
+[Your name]
+
+---
+
+TEMPLATE 5: Question Pattern (Best for senior execs)
+Subject: One question about [Company]'s Q[X]
+Body: Hi [Name],
+
+Quick question: what's the biggest bottleneck to [their goal] right now?
+
+I ask because I help [their role] cut that exact bottleneck by 30-50% in 60 days. If interested, I'd love to share the exact system. 15 min?
+
+[Your name]
+
+---
+
+TEMPLATE 6: Follow-Up 1 (Day 3)
+Subject: Re: [their subject]
+Body: Hi [Name],
+
+Bumping this. If now's not the right time, no worries — happy to reconnect in 30 days.
+
+[Your name]
+
+---
+
+TEMPLATE 7: Follow-Up 2 (Day 7, add value)
+Subject: One thing about [their industry]
+Body: Hi [Name],
+
+I just read [specific article/report relevant to them]. One insight that stood out: [specific takeaway that helps their business].
+
+I help [their role] apply this kind of insight via AI. If you're interested, I can share the exact system. 15 min?
+
+[Your name]
+
+---
+
+TEMPLATE 8: Follow-Up 3 (Day 14, breakup)
+Subject: Should I close your file?
+Body: Hi [Name],
+
+Haven't heard back — assuming the timing isn't right. Should I close your file?
+
+If timing changes, I'm here. No hard feelings.
+
+[Your name]
+
+---
+
+TEMPLATE 9: LinkedIn Connection Request (300 char limit)
+"Hi [Name] — saw your work at [Company] on [specific thing]. Fellow [their role]. Would love to connect and share some AI-driven [their industry] insights."
+
+---
+
+TEMPLATE 10: LinkedIn DM (After connection accepted)
+"Thanks for connecting! Quick question — if you could 10x your [their goal] in 30 days, would that be worth 15 min? I help [their role] do exactly that. Free to try: [link]"
+=========================================</div>
+        <button class="copy-btn" onclick="copyCode(this)">Copy All 10</button>
+
+        <h3 style="margin-top:20px;">💰 Pricing & Packages</h3>
+        <div class="code-block">COLD EMAIL AGENCY PRICING
+=========================================
+Setup Fee: $500-1,000 (one-time)
+- ICP research
+- Lead list building (5,000+ contacts)
+- Email infrastructure setup
+- Domain warmup
+- 3 email sequences
+
+Monthly Retainer: $1,500-3,000/mo
+- 2,000+ emails/mo sent
+- 50+ replies handled
+- Weekly reporting
+- 2 sequences/month
+
+Premium: $5,000-10,000/mo
+- 5,000+ emails/mo
+- 200+ replies
+- Dedicated account manager
+- Custom integrations
+
+Target Client: B2B SaaS, agencies, coaches, consultants
+Ideal Deal Size: $1,000-3,000/mo per client
+=========================================</div>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+
+        <h3 style="margin-top:20px;">🎯 Lead Sourcing Playbook</h3>
+        <div class="code-block">FREE LEAD SOURCES (use these first)
+=========================================
+1. LinkedIn Sales Navigator ($99/mo, 1 month free trial)
+2. Apollo.io (free tier: 10,000 credits/mo)
+3. Hunter.io (find emails from domain: 25 free/mo)
+4. RocketReach (free tier: 5 lookups/mo)
+5. Snov.io (free tier: 50 credits/mo)
+6. Twitter advanced search
+7. Google Maps (for local businesses)
+8. Yelp (for local businesses)
+9. Crunchbase (free: 50 lookups/mo)
+10. ProductHunt (for SaaS leads)
+=========================================
+
+PAID (when you're ready)
+=========================================
+- ZoomInfo ($14,995/yr — only when you have $5K/mo MRR)
+- Apollo.io paid ($49/mo, 10K credits)
+- Lusha ($29/mo, 80 credits)
+- Seamless.ai ($65/mo, 200 credits)
+=========================================
+</div>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+
+        <h3 style="margin-top:20px;">⚙️ Setup (3 hours)</h3>
+        <ol>
+          <li>Sign up for Instantly.ai ($30/mo) OR Smartlead ($25/mo) for email sending</li>
+          <li>Buy 1-2 sending domains (~$12/yr each from Namecheap)</li>
+          <li>Set up SPF, DKIM, DMARC records (Instantly has a wizard)</li>
+          <li>Warm up domains for 2 weeks (Instantly auto-warms)</li>
+          <li>Import lead list from Apollo or LinkedIn</li>
+          <li>Load 5-10 email templates above</li>
+          <li>Start sending 30-50 emails/day per domain</li>
+          <li>Check inbox 2x/day, respond to interested leads</li>
+          <li>Book calls → close clients → deliver</li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- SYSTEM 3: AI CONTENT SERVICE - COMING SOON -->
+    <div class="system-block">
+      <div class="system-header" onclick="toggleSystem('s3')">
+        <div class="system-icon">🎨</div>
+        <h2>System 3: AI Content Service</h2>
+        <span class="status">Q3 2026</span>
+      </div>
+      <div class="system-content" id="s3">
+        <p><strong>Coming in Q3 2026.</strong> Buy now and get it free when it ships.</p>
+        <p style="margin-top:12px;">Will include: 30-day content calendar templates, 5 niche-specific prompt packs, client intake flow, pricing calculator, and quality control checklist.</p>
+      </div>
+    </div>
+
+    <!-- SYSTEM 4: AI LEAD GEN AGENCY - COMING SOON -->
+    <div class="system-block">
+      <div class="system-header" onclick="toggleSystem('s4')">
+        <div class="system-icon">🤖</div>
+        <h2>System 4: AI Lead Gen Agency</h2>
+        <span class="status">Q3 2026</span>
+      </div>
+      <div class="system-content" id="s4">
+        <p><strong>Coming in Q3 2026.</strong> Buy now and get it free when it ships.</p>
+        <p style="margin-top:12px;">Will include: 5 complete outbound systems, lead magnet templates, CRM setup guide, sales call scripts, and pricing: $20-100/lead.</p>
+      </div>
+    </div>
+
+    <!-- SYSTEM 5: AI CUSTOMER SERVICE - COMING SOON -->
+    <div class="system-block">
+      <div class="system-header" onclick="toggleSystem('s5')">
+        <div class="system-icon">💬</div>
+        <h2>System 5: AI Customer Service</h2>
+        <span class="status">Q3 2026</span>
+      </div>
+      <div class="system-content" id="s5">
+        <p><strong>Coming in Q3 2026.</strong> Buy now and get it free when it ships.</p>
+        <p style="margin-top:12px;">Will include: chatbot training templates, e-commerce integration guide, sales script, 5 proven niches, and pricing: $200-500/mo per client.</p>
+      </div>
+    </div>
+
+    <div class="upsell-banner">
+      <h3>🚀 Get the Next 3 Systems Free</h3>
+      <p style="margin:8px 0;">Buy the Agency tier ($499) and get the next 3 systems as soon as they ship. Plus white-label rights.</p>
+      <a href="https://lwy907919-a11y.github.io/ai-money-kit/#pricing">Upgrade to Agency →</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>🧞 AI Money Kit · Members Area · Lifetime access · <a href="mailto:hzylw@geniefamily.ai">hzylw@geniefamily.ai</a></p>
+  <p style="margin-top:8px;">Built by an indie founder who wants you to win · 30-day refund</p>
+</footer>
+
+<script>
+function verifyAccess() {
+  const email = document.getElementById('memberEmail').value.trim();
+  const msg = document.getElementById('accessMsg');
+  if (!email || !email.includes('@')) {
+    msg.textContent = 'Please enter a valid email';
+    msg.style.color = '#fca5a5';
+    return;
+  }
+  // For demo: any email unlocks. In production, verify PayPal subscription.
+  // Store email locally so the user doesn't re-enter
+  const existing = JSON.parse(localStorage.getItem('aimk-access') || '{}');
+  existing.email = email;
+  existing.date = new Date().toISOString();
+  localStorage.setItem('aimk-access', JSON.stringify(existing));
+  
+  document.getElementById('accessGate').style.display = 'none';
+  document.getElementById('accessGranted').style.display = 'block';
+  window.scrollTo(0, 0);
+}
+
+function toggleSystem(id) {
+  const el = document.getElementById(id);
+  el.classList.toggle('open');
+}
+
+function copyCode(btn) {
+  const code = btn.previousElementSibling.textContent;
+  navigator.clipboard.writeText(code).then(() => {
+    const orig = btn.textContent;
+    btn.textContent = '✓ Copied!';
+    setTimeout(() => btn.textContent = orig, 2000);
+  }).catch(() => {
+    // Fallback for older browsers
+    const ta = document.createElement('textarea');
+    ta.value = code;
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+    btn.textContent = '✓ Copied!';
+    setTimeout(() => btn.textContent = 'Copy', 2000);
+  });
+}
+
+// Auto-unlock if previously authenticated
+window.addEventListener('DOMContentLoaded', () => {
+  const stored = JSON.parse(localStorage.getItem('aimk-access') || '{}');
+  if (stored.email) {
+    document.getElementById('accessGate').style.display = 'none';
+    document.getElementById('accessGranted').style.display = 'block';
+  }
+});
+</script>
+
+</body>
+</html>
