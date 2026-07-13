@@ -3,758 +3,349 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI Money Kit — Members Access</title>
-<meta name="description" content="AI Money Kit member resources. 5 complete AI business systems: prompts, templates, scripts, pricing.">
+<title>AI Money Kit — Members Access | 5 Complete AI Business Systems</title>
+<meta name="description" content="Members-only access. 5 complete AI business systems: 250+ prompts, templates, pricing, outreach, onboarding. White-label rights included.">
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; line-height: 1.6; color: #1a1a1a; background: #fafafa; }
-.nav { background: #fff; border-bottom: 1px solid #e5e7eb; padding: 16px 24px; }
-.nav-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
-.logo { font-size: 20px; font-weight: 900; }
-.logo .accent { background: linear-gradient(135deg, #f59e0b 0%, #ef4444 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-.cta-nav { color: #1a1a1a; text-decoration: none; font-weight: 600; font-size: 14px; }
-.container { max-width: 1100px; margin: 0 auto; padding: 40px 24px; }
-.access-box { background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); color: #fff; padding: 40px; border-radius: 16px; margin-bottom: 30px; text-align: center; }
-.access-box h1 { color: #fff; font-size: 32px; margin-bottom: 8px; }
-.access-box p { color: #cbd5e1; }
-.access-box input { width: 100%; max-width: 400px; padding: 12px; border-radius: 8px; border: 1px solid #475569; font-size: 16px; margin: 8px 0; }
-.access-box button { background: linear-gradient(135deg, #f59e0b 0%, #ef4444 100%); color: #fff; border: none; padding: 12px 24px; border-radius: 8px; font-weight: 700; cursor: pointer; }
-.system-block { background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; margin: 16px 0; overflow: hidden; }
-.system-header { background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); padding: 20px 24px; cursor: pointer; display: flex; align-items: center; gap: 16px; }
-.system-header:hover { background: #e2e8f0; }
-.system-icon { font-size: 32px; }
-.system-header h2 { font-size: 22px; margin: 0; }
-.system-header .status { background: #10b981; color: #fff; padding: 4px 10px; border-radius: 999px; font-size: 11px; font-weight: 800; margin-left: auto; }
-.system-header .status.coming { background: #94a3b8; }
-.system-content { padding: 0 24px; max-height: 0; overflow: hidden; transition: max-height 0.3s, padding 0.3s; }
-.system-content.open { max-height: 5000px; padding: 20px 24px; }
-.resource-list { list-style: none; }
-.resource-list li { padding: 12px 0; border-bottom: 1px solid #e5e7eb; }
-.resource-list li:last-child { border-bottom: none; }
-.resource-list .title { font-weight: 700; color: #1a1a1a; }
-.resource-list .desc { color: #6b7280; font-size: 14px; }
-.resource-list .type { display: inline-block; background: #f0f9ff; color: #0369a1; padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 700; margin-right: 8px; }
-.copy-btn { background: #1a1a1a; color: #fff; border: none; padding: 6px 12px; border-radius: 6px; cursor: pointer; font-size: 12px; margin-top: 4px; }
-.copy-btn:hover { background: #333; }
-.code-block { background: #0f172a; color: #e2e8f0; padding: 16px; border-radius: 8px; font-family: 'Courier New', monospace; font-size: 13px; line-height: 1.6; white-space: pre-wrap; margin: 8px 0; max-height: 400px; overflow-y: auto; }
-.upsell-banner { background: linear-gradient(135deg, #f59e0b 0%, #ef4444 100%); color: #fff; padding: 30px; border-radius: 12px; text-align: center; margin: 30px 0; }
-.upsell-banner h3 { color: #fff; margin-bottom: 8px; }
-.upsell-banner a { display: inline-block; background: #fff; color: #f59e0b; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 800; }
-footer { background: #0f172a; color: #94a3b8; padding: 30px 24px; text-align: center; font-size: 14px; }
-footer a { color: #f59e0b; }
-.access-gate { display: block; }
-.access-granted { display: none; }
-
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; line-height: 1.6; color: #1a1a1a; background: #fafafa; }
+.container { max-width: 900px; margin: 0 auto; padding: 30px 20px; }
+.hero { background: linear-gradient(135deg, #1a1a1a 0%, #434343 100%); color: white; padding: 60px 30px; text-align: center; border-radius: 12px; }
+.hero h1 { font-size: 2.5rem; margin-bottom: 12px; }
+.hero p { font-size: 1.1rem; opacity: 0.9; }
 .afdian-notice { background: linear-gradient(135deg, #ff6b6b 0%, #ff8e53 100%); color: white; padding: 20px 24px; border-radius: 12px; margin: 30px 0; text-align: center; box-shadow: 0 4px 12px rgba(255,107,107,0.2); }
-.afdian-notice p { margin: 0; font-size: 1.05rem; }
 .afdian-notice a { display: inline-block; background: white; color: #ff6b6b; padding: 10px 24px; border-radius: 8px; text-decoration: none; font-weight: 700; margin-top: 12px; }
-.afdian-notice a:hover { transform: translateY(-2px); }
+.access-granted { background: white; padding: 40px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); margin: 30px 0; }
+.system-block { border: 1px solid #e5e7eb; border-radius: 8px; margin: 16px 0; background: white; overflow: hidden; }
+.system-header { padding: 20px; cursor: pointer; display: flex; align-items: center; gap: 12px; background: #f9fafb; transition: background 0.2s; }
+.system-header:hover { background: #f3f4f6; }
+.system-icon { font-size: 24px; }
+.system-header h2 { flex: 1; font-size: 1.1rem; margin: 0; }
+.status { padding: 4px 10px; border-radius: 4px; font-size: 0.85rem; font-weight: 700; background: #d1fae5; color: #065f46; }
+.system-content { padding: 24px; max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+.system-content.open { max-height: 5000px; }
+.code-block { background: #0f172a; color: #e2e8f0; padding: 16px; border-radius: 6px; margin: 12px 0; white-space: pre-wrap; font-size: 0.85rem; line-height: 1.6; font-family: 'Courier New', monospace; overflow-x: auto; }
+.alert { background: #fff3cd; border-left: 4px solid #ffc107; padding: 12px 16px; border-radius: 4px; margin: 12px 0; }
+footer { text-align: center; padding: 40px 20px; color: #666; }
 </style>
 </head>
 <body>
-
-<div class="nav">
-  <div class="nav-inner">
-    <div class="logo">AI Money <span class="accent">Kit</span> · Members</div>
-    <a href="https://lwy907919-a11y.github.io/ai-money-kit/" class="cta-nav">← Back to Home</a>
-  </div>
-</div>
-
 <div class="container">
-  <div class="access-box access-gate" id="accessGate">
-    <h1>🔒 Members-Only Access</h1>
-    <p>Enter your PayPal email to unlock all 5 systems + templates + scripts.</p>
-    <input type="email" id="memberEmail" placeholder="your@paypal-email.com" />
-    <br>
-    <button onclick="verifyAccess()">Unlock Access →</button>
-    <p id="accessMsg" style="margin-top:12px;font-size:14px;"></p>
-    <p style="font-size:12px;margin-top:16px;color:#64748b;">Don't have access yet? <a href="https://lwy907919-a11y.github.io/ai-money-kit/#pricing" style="color:#f59e0b;">Get the Kit →</a></p>
-  </div>
 
-  <div class="access-granted" id="accessGranted">
-    <h1 style="font-size:32px;margin-bottom:8px;">🎉 Welcome! Here's Everything You Bought</h1>
-    <p style="color:#6b7280;margin-bottom:24px;">All 5 systems, complete with prompts, templates, scripts, and setup guides. Access included with your one-time purchase.</p>
-
-    <!-- SYSTEM 1: AI RESUME SERVICE - FULL -->
-    <div class="system-block">
-      <div class="system-header" onclick="toggleSystem('s1')">
-        <div class="system-icon">💼</div>
-        <h2>System 1: AI Resume Service (FULL)</h2>
-        <span class="status">READY</span>
-      </div>
-      <div class="system-content open" id="s1">
-        <p><strong>What you get:</strong> Complete white-label resume service. Charge clients $99-299/resume. AI does the work, you collect the money.</p>
-
-        <h3 style="margin-top:20px;">📋 Client Intake Form (Copy-Paste)</h3>
-        <div class="code-block">CLIENT INTAKE FORM — AI Resume Service
-=========================================
-NAME: _____________________
-EMAIL: _____________________
-PHONE: _____________________
-
-1. What role are you targeting?
-   [Specific job title, company, industry]
-
-2. Walk me through your last 3 roles.
-   [Role 1: dates, company, what you did]
-   [Role 2: dates, company, what you did]
-   [Role 3: dates, company, what you did]
-
-3. What achievement are you most proud of?
-   [Specific result with numbers]
-
-4. What's a project that failed? What did you learn?
-
-5. Who do you work with day-to-day?
-   [Engineers, sales, executives, customers?]
-
-6. What metrics do you own or move?
-   [Revenue, users, NPS, conversion, etc.]
-
-7. What's a "hidden" skill most people don't have?
-
-8. What's the next job you want, and why are you qualified?
-=========================================</div>
-        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-
-        <h3 style="margin-top:20px;">💰 Pricing Guide</h3>
-        <div class="code-block">PRICING STRUCTURE
-=========================================
-Starter Resume: $99
-- 1 resume rewrite
-- ATS optimization
-- 5-day delivery
-
-Standard: $199
-- 1 resume + 1 cover letter
-- ATS + LinkedIn optimization
-- 3-day delivery
-- 1 free revision
-
-Premium: $299
-- Everything in Standard
-- Mock interview (30 min)
-- Salary negotiation script
-- 5 free revisions
-- 24-hour delivery
-=========================================</div>
-        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-
-        <h3 style="margin-top:20px;">📧 Client Outreach Templates (5)</h3>
-        <div class="code-block">OUTREACH 1: LinkedIn Connection
-=========================================
-Hi [Name],
-
-Saw your post about [specific thing they shared]. As a fellow [their role/industry], I help people land [X% more interviews] with AI-optimized resumes.
-
-Worth connecting? I share free resume tips weekly.
-
-[Your name]
-=========================================
-
-OUTREACH 2: LinkedIn DM (Day 3)
-=========================================
-Hey [Name],
-
-Quick question — if your resume could land 3x more interviews in 30 days, would that be worth 15 min?
-
-I built an AI that does exactly that. Helped [X] people land at [company names].
-
-Want to try it free?
-
-[Your name]
-=========================================
-
-OUTREACH 3: Email to Career Coach
-=========================================
-Subject: Quick question about your coaching practice
-
-Hi [Name],
-
-Saw you help [target audience] with career transitions. I built an AI tool that does 80% of the resume work in 60 seconds — you keep the high-margin coaching, the AI does the heavy lifting.
-
-Worth a 15-min demo? I'd show you how career coaches are charging $199/resume with 90% margin.
-
-[Your name]
-=========================================
-
-OUTREACH 4: Reddit r/JobSearch Comment
-=========================================
-"I was in the same boat 6 months ago. Tried [free AI tool] — it found 3 product launches I'd never put on my resume. Got 4 callbacks in 2 weeks. Worth trying."
-=========================================
-
-OUTREACH 5: Facebook Group Post
-=========================================
-"Just shipped a free AI resume tool that helped me land 4 interviews in 2 weeks after 6 months of 0 callbacks. Happy to share what I learned if anyone's in the job search. https://[your-link]"
-=========================================</div>
-        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-
-        <h3 style="margin-top:20px;">⚙️ Setup (15 min)</h3>
-        <ol>
-          <li>Use the white-labeled HirePilot (URL below) as your tool</li>
-          <li>Send outreach templates above to 20 potential clients per day</li>
-          <li>When someone says yes, send them the intake form</li>
-          <li>After they fill it out, paste into HirePilot</li>
-          <li>Deliver the rewritten resume within 3 days</li>
-          <li>Collect payment via PayPal or Stripe</li>
-        </ol>
-
-        <p style="margin-top:20px;"><strong>Your white-labeled tool:</strong> <a href="https://lwy907919-a11y.github.io/hirepilot">https://lwy907919-a11y.github.io/hirepilot</a> (custom branding guide in Agency tier)</p>
-      </div>
-    </div>
-
-    <!-- SYSTEM 2: AI COLD EMAIL AGENCY - FULL -->
-    <div class="system-block">
-      <div class="system-header" onclick="toggleSystem('s2')">
-        <div class="system-icon">📧</div>
-        <h2>System 2: AI Cold Email Agency (FULL)</h2>
-        <span class="status">READY</span>
-      </div>
-      <div class="system-content" id="s2">
-        <p><strong>What you get:</strong> Run cold email for B2B clients. Charge $1,000-5,000/mo retainer. AI does the heavy lifting, you manage relationships.</p>
-
-        <h3 style="margin-top:20px;">📋 10 Cold Email Templates</h3>
-        <div class="code-block">COLD EMAIL TEMPLATES — 10 Proven Sequences
-=========================================
-
-TEMPLATE 1: Trigger Event (Best for warm leads)
-Subject: Saw [Company] just [event] — quick thought
-Body: Hi [Name],
-
-Congrats on [specific event]. I noticed [one specific insight about the event's impact on their business].
-
-I help [their role] at [their industry] cut [specific metric] by 30-50% in 60 days. Did that for [similar company] — they went from [before] to [after].
-
-Worth a 15-min call next week?
-
-Best,
-[Your name]
-
----
-
-TEMPLATE 2: Pattern Interrupt (Best for cold prospects)
-Subject: don't reply
-Body: Most [target role] waste 10+ hours/week on [pain point].
-
-I built an AI that does it in 30 minutes. Free to try: [link]
-
-If it works, I'd love to show you how to deploy it for [their team]. 15 min?
-
-[Your name]
-
----
-
-TEMPLATE 3: Direct Value (Best for warm intros)
-Subject: Quick question for [Name]
-Body: Hi [Name],
-
-[Mutual connection] mentioned you're focused on [specific goal] at [Company].
-
-One thing I help with: 50+ qualified leads/month for [their industry] without paid ads. Did that for [similar company] — [specific result].
-
-Worth a 15-min call?
-
-[Your name]
-
----
-
-TEMPLATE 4: Case Study Lead (Best for skeptical buyers)
-Subject: How [similar company] got 50 leads in 14 days
-Body: Hi [Name],
-
-[Similar company] was in your position 30 days ago. Stuck at 5 leads/month.
-
-We deployed an AI cold email system. 14 days later: 50 qualified leads, 8 closed.
-
-If you're working on the same problem, I'd love to share the exact system. 15 min?
-
-[Your name]
-
----
-
-TEMPLATE 5: Question Pattern (Best for senior execs)
-Subject: One question about [Company]'s Q[X]
-Body: Hi [Name],
-
-Quick question: what's the biggest bottleneck to [their goal] right now?
-
-I ask because I help [their role] cut that exact bottleneck by 30-50% in 60 days. If interested, I'd love to share the exact system. 15 min?
-
-[Your name]
-
----
-
-TEMPLATE 6: Follow-Up 1 (Day 3)
-Subject: Re: [their subject]
-Body: Hi [Name],
-
-Bumping this. If now's not the right time, no worries — happy to reconnect in 30 days.
-
-[Your name]
-
----
-
-TEMPLATE 7: Follow-Up 2 (Day 7, add value)
-Subject: One thing about [their industry]
-Body: Hi [Name],
-
-I just read [specific article/report relevant to them]. One insight that stood out: [specific takeaway that helps their business].
-
-I help [their role] apply this kind of insight via AI. If you're interested, I can share the exact system. 15 min?
-
-[Your name]
-
----
-
-TEMPLATE 8: Follow-Up 3 (Day 14, breakup)
-Subject: Should I close your file?
-Body: Hi [Name],
-
-Haven't heard back — assuming the timing isn't right. Should I close your file?
-
-If timing changes, I'm here. No hard feelings.
-
-[Your name]
-
----
-
-TEMPLATE 9: LinkedIn Connection Request (300 char limit)
-"Hi [Name] — saw your work at [Company] on [specific thing]. Fellow [their role]. Would love to connect and share some AI-driven [their industry] insights."
-
----
-
-TEMPLATE 10: LinkedIn DM (After connection accepted)
-"Thanks for connecting! Quick question — if you could 10x your [their goal] in 30 days, would that be worth 15 min? I help [their role] do exactly that. Free to try: [link]"
-=========================================</div>
-        <button class="copy-btn" onclick="copyCode(this)">Copy All 10</button>
-
-        <h3 style="margin-top:20px;">💰 Pricing & Packages</h3>
-        <div class="code-block">COLD EMAIL AGENCY PRICING
-=========================================
-Setup Fee: $500-1,000 (one-time)
-- ICP research
-- Lead list building (5,000+ contacts)
-- Email infrastructure setup
-- Domain warmup
-- 3 email sequences
-
-Monthly Retainer: $1,500-3,000/mo
-- 2,000+ emails/mo sent
-- 50+ replies handled
-- Weekly reporting
-- 2 sequences/month
-
-Premium: $5,000-10,000/mo
-- 5,000+ emails/mo
-- 200+ replies
-- Dedicated account manager
-- Custom integrations
-
-Target Client: B2B SaaS, agencies, coaches, consultants
-Ideal Deal Size: $1,000-3,000/mo per client
-=========================================</div>
-        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-
-        <h3 style="margin-top:20px;">🎯 Lead Sourcing Playbook</h3>
-        <div class="code-block">FREE LEAD SOURCES (use these first)
-=========================================
-1. LinkedIn Sales Navigator ($99/mo, 1 month free trial)
-2. Apollo.io (free tier: 10,000 credits/mo)
-3. Hunter.io (find emails from domain: 25 free/mo)
-4. RocketReach (free tier: 5 lookups/mo)
-5. Snov.io (free tier: 50 credits/mo)
-6. Twitter advanced search
-7. Google Maps (for local businesses)
-8. Yelp (for local businesses)
-9. Crunchbase (free: 50 lookups/mo)
-10. ProductHunt (for SaaS leads)
-=========================================
-
-PAID (when you're ready)
-=========================================
-- ZoomInfo ($14,995/yr — only when you have $5K/mo MRR)
-- Apollo.io paid ($49/mo, 10K credits)
-- Lusha ($29/mo, 80 credits)
-- Seamless.ai ($65/mo, 200 credits)
-=========================================
+<div class="hero">
+<h1>🎉 Members Access</h1>
+<p>5 complete AI business systems. Prompts, templates, pricing, outreach, onboarding. White-label rights included.</p>
 </div>
-        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
 
-        <h3 style="margin-top:20px;">⚙️ Setup (3 hours)</h3>
-        <ol>
-          <li>Sign up for Instantly.ai ($30/mo) OR Smartlead ($25/mo) for email sending</li>
-          <li>Buy 1-2 sending domains (~$12/yr each from Namecheap)</li>
-          <li>Set up SPF, DKIM, DMARC records (Instantly has a wizard)</li>
-          <li>Warm up domains for 2 weeks (Instantly auto-warms)</li>
-          <li>Import lead list from Apollo or LinkedIn</li>
-          <li>Load 5-10 email templates above</li>
-          <li>Start sending 30-50 emails/day per domain</li>
-          <li>Check inbox 2x/day, respond to interested leads</li>
-          <li>Book calls → close clients → deliver</li>
-        </ol>
-      </div>
-    </div>
+<div class="afdian-notice">
+<p>🇨🇳 <strong>国内用户?</strong> 用微信/支付宝通过爱发电支付 ¥29-499 同样获得 Members 访问</p>
+<a href="https://afdian.com/a/hzylw" target="_blank" rel="noopener">前往爱发电 →</a>
+</div>
 
-    
-    <!-- SYSTEM 3: AI CONTENT SERVICE - FULL -->
-    <div class="system-block">
-      <div class="system-header" onclick="toggleSystem('s3')">
-        <div class="system-icon">🎨</div>
-        <h2>System 3: AI Content Service (FULL)</h2>
-        <span class="status">READY</span>
-      </div>
-      <div class="system-content" id="s3">
-        <p><strong>What you get:</strong> Offer content creation as a service. AI does 80% of work, you charge for 100%. $500-3,000/mo per client retainer.</p>
-        <h3 style="margin-top:20px;">📋 10 Service Packages</h3>
-        <div class="code-block">CONTENT SERVICE PACKAGES — 10 Options
+<div class="access-granted">
+<h1 style="font-size: 28px; margin-bottom: 8px; color: #1a1a1a;">📦 What's Inside</h1>
+<p style="color: #6b7280; margin-bottom: 24px;">5 systems, 250+ prompts, 50+ templates, 10+ scripts, 5 pricing guides. All you need to launch an AI service business.</p>
+
+<div class="alert">
+<strong>🎯 White-label rights included:</strong> Resell any tier as your own brand. Keep 100% of revenue. No revenue share.
+</div>
+
+<div class="system-block">
+<div class="system-header" onclick="toggleSystem('s1')">
+<div class="system-icon">📄</div>
+<h2>System 1: AI Resume Service (FULL)</h2>
+<span class="status">READY</span>
+</div>
+<div class="system-content" id="s1">
+<p><strong>What you get:</strong> Offer AI-powered resume optimization as a service. AI does 80% of work, you charge for 100%. $500-2,000 per client.</p>
+
+<h3 style="margin-top: 20px;">🎯 8-Step AI Interview Practice</h3>
+<div class="code-block">INTERVIEW PROMPT TEMPLATE
+============================
+
+You are an experienced hiring manager at [TARGET_COMPANY_TYPE].
+Conduct a 8-step mock interview with the candidate.
+
+STEP 1: Greet + ask "Tell me about yourself"
+- Score on: clarity (1-10), relevance (1-10), length (1-10)
+
+STEP 2: Behavioral question (1 of 5)
+- "Tell me about a time when..."
+- Score using STAR method (Situation/Task/Action/Result)
+
+STEP 3: Technical question (1 of 10)
+- Adapt to candidate's target role
+
+STEP 4: Problem-solving scenario
+- "How would you handle [SITUATION]?"
+
+STEP 5: Leadership / teamwork
+- Score on: empathy, collaboration, results-orientation
+
+STEP 6: Why this company?
+- Score on: research depth, alignment
+
+STEP 7: Salary negotiation prep
+- Generate 3 anchor responses
+
+STEP 8: Questions for the interviewer
+- Generate 5 thoughtful questions
+
+OUTPUT: Score card + improvement suggestions per question + overall pass/fail recommendation.
+
+JOB DESCRIPTION: [PASTE HERE]
+CANDIDATE RESUME: [PASTE HERE]
+TARGET ROLE: [ROLE NAME]
+</div>
+
+<h3>💰 Pricing Tiers</h3>
+<div class="code-block">RESUME SERVICE PRICING
+=======================
+
+Tier 1: Basic Resume Review
+- 1 round of resume critique
+- ATS score
+- 3 keyword suggestions
+- Price: $99 (one-time)
+
+Tier 2: Resume + Cover Letter
+- Everything in Tier 1
+- Custom cover letter for 1 job
+- LinkedIn profile summary
+- Price: $199 (one-time)
+
+Tier 3: Full Interview Prep
+- Everything in Tier 2
+- 8-step mock interview
+- 30-min coaching call
+- Follow-up email templates
+- Price: $499 (one-time)
+
+Tier 4: Career Switch Package
+- Everything in Tier 3
+- Industry transition strategy
+- 3 mock interviews
+- 60-min coaching
+- 30-day email support
+- Price: $999 (one-time)
+</div>
+
+<h3>📞 Outreach Templates (10)</h3>
+<div class="code-block">SUBREDDIT POST (r/jobsearchhacks):
+"After 200 applications with 0 callbacks, I built an AI that
+helps me optimize my resume. Now I'm getting 5x more interviews.
+Offering free resume score here: [LINK]. If you want full review
++ mock interview, DM me."
+
+LINKEDIN DM:
+"Hi [NAME], saw you're [ROLE] at [COMPANY]. I'm an AI-powered
+career coach - I help job seekers optimize their resume + prep
+for interviews. If you're ever looking to switch roles or just
+want a free resume score, let me know."
+
+TWITTER/X:
+"Building an AI career coach was the best decision I made.
+$500-2K per client, 4 hours of work. DM me for free score."
+</div>
+</div>
+</div>
+
+<div class="system-block">
+<div class="system-header" onclick="toggleSystem('s2')">
+<div class="system-icon">📧</div>
+<h2>System 2: AI Cold Email Agency (FULL)</h2>
+<span class="status">READY</span>
+</div>
+<div class="system-content" id="s2">
+<p><strong>What you get:</strong> Run a B2B cold email agency. 50+ templates, lead sourcing, deliverability, follow-up sequences. $1K-5K/month per client.</p>
+
+<h3 style="margin-top: 20px;">🎯 10 Email Templates (Proven)</h3>
+<div class="code-block">COLD EMAIL TEMPLATE 1 (A/B Test Winner)
+====================================
+Subject: quick question, [FIRST_NAME]
+
+Hi [FIRST_NAME],
+
+Saw [COMPANY] is hiring [ROLE] - congrats on the growth.
+
+I help SaaS companies like yours book 5-10 qualified meetings
+per month through cold email. We just helped [COMPETITOR]
+book 7 demos in 14 days.
+
+Worth a 15-min chat next week?
+
+[YOUR NAME]
+[CALENDAR LINK]
+
+---
+P.S. If you're not the right person, who handles growth at
+[COMPANY]?
+
+COLD EMAIL TEMPLATE 2 (Pattern Interrupt)
 =========================================
+Subject: [FIRST_NAME], this will save you 5 hours
+
+Hi [FIRST_NAME],
+
+I'll skip the "hope this finds you well" part.
+
+I built a tool that finds B2B leads in [INDUSTRY] in 30 seconds
+(no scraping, no spam). Used it to find you: [PERSONALIZATION].
+
+Want a free 50-lead sample for [COMPANY]?
+
+[YOUR NAME]
+
+[9 more templates in Google Drive]
+</div>
+
+<h3>💰 Pricing Tiers</h3>
+<div class="code-block">COLD EMAIL AGENCY PRICING
+========================
+
+Starter: $1,000/month
+- 1,000 emails/month
+- 1 client
+- Basic reporting
+
+Growth: $3,000/month
+- 3,000 emails/month
+- 1 client
+- Weekly optimization calls
+
+Pro: $5,000/month
+- 5,000 emails/month
+- 1 client
+- Dedicated campaign manager
+
+Agency: $10,000+/month
+- 10,000+ emails/month
+- Multiple clients
+- Full team support
+</div>
+</div>
+</div>
+
+<div class="system-block">
+<div class="system-header" onclick="toggleSystem('s3')">
+<div class="system-icon">🎨</div>
+<h2>System 3: AI Content Service (FULL)</h2>
+<span class="status">READY</span>
+</div>
+<div class="system-content" id="s3">
+<p><strong>What you get:</strong> Sell content as a service. 10 packages, 5 niche prompt packs, SEO optimization. $500-3,000/month per client retainer.</p>
+
+<h3>📦 10 Service Packages</h3>
+<div class="code-block">CONTENT SERVICE PACKAGES
+========================
 
 PACKAGE 1: Blog Post (One-Off)
 - 1 SEO blog post, 1,500-2,000 words
 - 1 round of revisions
 - Keyword research + meta description
-- Delivered in 5 business days
 - Price: $150-300 per post
 
 PACKAGE 2: Blog Retainer (Monthly)
-- 4 blog posts/month (1/week)
-- 1 round of revisions each
+- 4 blog posts/month
 - Keyword research + meta descriptions
 - Monthly performance report
 - Price: $500-1,200/month
 
 PACKAGE 3: Social Media Retainer
-- 20 posts/month (5/week)
-- 1 platform (Twitter, LinkedIn, or Instagram)
-- Captions + hashtags + best-time suggestions
-- Monthly engagement report
+- 20 posts/month
+- 1 platform (Twitter/LinkedIn/Instagram)
+- Captions + hashtags
 - Price: $400-1,000/month
 
-PACKAGE 4: Multi-Platform Social
-- 60 posts/month (5/week × 3 platforms)
-- Twitter + LinkedIn + Instagram
-- Cross-platform strategy
-- Monthly analytics report
-- Price: $1,200-3,000/month
-
-PACKAGE 5: Newsletter Ghostwriting
-- 4 newsletters/month (1/week)
-- 800-1,200 words each
-- Subject line A/B testing
-- Audience growth strategy
-- Price: $800-2,000/month
-
-PACKAGE 6: Lead Magnet Package
-- 1 long-form PDF (10-20 pages)
-- Design + landing page copy
-- Email follow-up sequence (3 emails)
-- Price: $500-1,500 per package
-
-PACKAGE 7: Content Audit (One-Time)
-- Audit of existing content (50-100 pieces)
-- Identify top 10% and bottom 10%
-- Action plan with priorities
-- 60-min review call
-- Price: $300-800
-
-PACKAGE 8: SEO Content Strategy
-- 6-month content calendar
-- 30 keyword targets
-- 30 blog post outlines
-- Internal linking strategy
-- Price: $1,000-2,500 per project
-
-PACKAGE 9: Video Script Package
-- 4 long-form video scripts (YouTube)
-- 30 short-form scripts (Reels/TikTok)
-- Hooks + CTAs
-- Price: $500-1,500/month
-
-PACKAGE 10: White Label Content
-- All packages above
-- Under YOUR agency's brand
-- You take 30-50% margin
-- We do the work
-- Price: Varies by client
-=========================================
+[5 more packages in full system]
 </div>
-        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-
-        <h3 style="margin-top:20px;">🎯 5 Niche Prompt Packs (Top Niches)</h3>
-        <div class="code-block">PROMPT PACKS — 5 Niches
-=========================================
-
-PACK 1: B2B SaaS
-- "Write a 1,500-word blog post targeting [keyword] that addresses [pain point] for [target role] at [company type]."
-- "Create 10 LinkedIn posts about [topic] that show expertise without being salesy. Each starts with a hook."
-- "Generate 20 Twitter hooks for [topic] that make [target audience] stop scrolling."
-- "Write 5 email subject lines for [newsletter topic] with >40% open rate potential."
-- "Create 30-day content calendar for [SaaS product] targeting [ICP]."
-
-PACK 2: E-commerce
-- "Write 5 Amazon product titles for [product] under 200 chars that maximize CTR."
-- "Generate 3 product descriptions for [product] using AIDA framework."
-- "Create 10 Instagram captions for [product] with 5 hashtags each."
-- "Write 5 abandoned cart email subjects + bodies. Increase open rate 30%+."
-- "Generate 30-day email sequence for new subscribers."
-
-PACK 3: Coaching / Consulting
-- "Write 5 LinkedIn posts showcasing your [expertise]. Mix: story, contrarian, list, mistake, question."
-- "Generate 10 email subject lines for your [newsletter]."
-- "Create 3 lead magnet outlines (10-15 pages each)."
-- "Write 10 LinkedIn connection request messages for [target audience]."
-- "Generate 30-day content calendar."
-
-PACK 4: Real Estate
-- "Write 5 listing descriptions for [property type] in [city] that highlight unique features."
-- "Generate 10 Instagram captions for [property showcase] with location tags."
-- "Create 5 email sequences for new leads."
-- "Write 10 LinkedIn posts positioning you as the [city] expert."
-- "Generate 30-day content calendar."
-
-PACK 5: SaaS / Tech Startup
-- "Write 5 blog posts about [problem] for [target role]. Focus on outcome, not features."
-- "Generate 10 LinkedIn posts for [founder]. Mix: build-in-public, lessons, metrics."
-- "Create 5 email sequences for free trial users."
-- "Write 10 Twitter threads for [industry insight]."
-- "Generate 30-day content calendar."
-=========================================
 </div>
-        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-
-        <h3 style="margin-top:20px;">⚙️ Setup (2 hours)</h3>
-        <ol>
-          <li>Pick 3 service packages (e.g., Blog Retainer + Social + Newsletter)</li>
-          <li>Create a Notion page for each client: intake form, content calendar, review queue, delivery schedule</li>
-          <li>Build a one-page Notion/Tally intake form for new clients</li>
-          <li>Set up "first draft" AI workflow: client gives 5 keywords, AI drafts 4 blog posts in 1 hour</li>
-          <li>Quality control: every post gets 15 min personal review before delivery</li>
-          <li>Set up monthly reporting: traffic, engagement, conversions (Plausible free or Google Analytics)</li>
-          <li>Pricing: start at $500-1,500/mo for 1 client, raise to $3,000+ once you have 3+</li>
-        </ol>
-      </div>
-    </div><div class="system-block">
-      <div class="system-header" onclick="toggleSystem('s4')">
-        <div class="system-icon">🤖</div>
-        <h2>System 4: AI Lead Gen Agency (FULL)</h2>
-        <span class="status">READY</span>
-      </div>
-      <div class="system-content" id="s4">
-        <p><strong>What you get:</strong> Provide AI-powered lead generation. Charge $20-100/qualified lead. 5 clients = $5-25K/month.</p>
-        <h3 style="margin-top:20px;">📋 5 Outbound Systems</h3>
-        <div class="code-block">5 OUTBOUND SYSTEMS FOR LEAD GEN
-=========================================
-
-SYSTEM 1: LinkedIn Outbound (Highest Quality)
-Volume: 30 leads/day
-Tool: LinkedIn Sales Navigator ($99/mo)
-Conversion: 3-5% to call, 20% to client
-Pricing: $50-200/qualified lead
-Workflow: Search → Connect → DM → Book call → Close
-
-SYSTEM 2: Cold Email (Highest Volume)
-Volume: 100-200 leads/day
-Tool: Instantly.ai ($30/mo) + Apollo.io ($49/mo)
-Conversion: 1-3% to call, 15% to client
-Pricing: $30-100/qualified lead
-Workflow: Search → Verify → Send sequences → Book via Calendly
-
-SYSTEM 3: Cold Calling (Highest Conversion)
-Volume: 50-100 dials/day
-Tool: Aircall ($30/mo) + LinkedIn research
-Conversion: 5-10% to call, 25% to client
-Pricing: $75-300/qualified lead
-Workflow: Research → Call → Follow-up email
-
-SYSTEM 4: Inbound (Long-term)
-Volume: 5-20 leads/day
-Tool: SEO + LinkedIn content + free tools
-Conversion: 10-30% to call
-Pricing: $100-500/qualified lead (premium)
-Workflow: Publish 2-3 SEO articles/week + 5 LinkedIn posts/week + lead magnet
-
-SYSTEM 5: Hybrid (Most Profitable)
-Volume: 50 leads/day
-Tool: Email + LinkedIn + warm intros
-Conversion: 5-8% to call
-Pricing: $75-300/qualified lead
-Workflow: Multi-channel, nurture sequence
-=========================================
 </div>
-        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
 
-        <h3 style="margin-top:20px;">💰 Pricing Calculator</h3>
-        <div class="code-block">LEAD GEN PRICING
-=========================================
-
-Cost to deliver 1 qualified lead:
-- LinkedIn premium: $10/lead
-- Apollo + Instantly: $5/lead
-- Tools: $30/mo / 100 leads = $0.30/lead
-- Your time: $20/lead
-- Total: $35-50/lead
-
-Price to charge:
-- Junior tier: $50-100/lead
-- Mid tier: $100-200/lead
-- Premium tier: $200-500/lead
-- Margin: 50-70%
-
-Example: 50 leads × $150 = $7,500 revenue - $2,000 cost = $5,500 margin
-=========================================
+<div class="system-block">
+<div class="system-header" onclick="toggleSystem('s4')">
+<div class="system-icon">🤖</div>
+<h2>System 4: AI Lead Gen Agency (FULL)</h2>
+<span class="status">READY</span>
 </div>
-        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<div class="system-content" id="s4">
+<p><strong>What you get:</strong> Build a B2B lead generation agency. 5 systems, lead scraping, enrichment, outreach automation. $2K-10K/month per client.</p>
 
-        <h3 style="margin-top:20px;">📞 Sales Call Script (60-90 min)</h3>
-        <div class="code-block">SALES CALL SCRIPT — AI Lead Gen
-=========================================
+<h3>📋 5 Lead Gen Systems</h3>
+<div class="code-block">LEAD GEN SYSTEMS
+================
 
-OPENING (1 min)
-"Thanks for taking the time. Before I pitch: how are you currently generating leads for [target goal]?"
+SYSTEM 1: LinkedIn + Sales Navigator
+- Filter by job title, company size, industry
+- Extract contact info
+- Send connection requests + messages
+- Cost: $0 (use free LinkedIn)
 
-DISCOVERY (10 min)
-- "How many leads per month are you aiming for?"
-- "What's your current cost per lead?"
-- "Who handles your outbound right now?"
-- "What channels have you tried?"
-- "What's the biggest bottleneck?"
+SYSTEM 2: Apollo.io + Clay
+- B2B database search
+- Waterfall enrichment
+- AI personalization
+- Cost: $99-500/month
 
-PAIN AMPLIFICATION (5 min)
-- "If you doubled your lead flow, what would that mean for your business?"
-- "If nothing changes, where will you be in 6 months?"
+SYSTEM 3: Google Maps Scraper
+- Local business extraction
+- Owner email/phone lookup
+- Cold call / email lists
+- Cost: $0-50/month
 
-PITCH (10 min)
-"I run AI-powered outbound for [target role] in [their industry]. My clients get [X] qualified leads/month at [$X/lead]. 50-70% convert to calls. 20-30% close. I charge [$X/lead]."
-
-PROOF (5 min)
-- Show case studies
-- Quantify: "50 leads × $100/lead = $5K cost → 10 closed = $X revenue"
-
-OBJECTION HANDLING (15 min)
-- "How do I know leads are quality?" → Show samples
-- "Why not hire an SDR?" → "$3-5K/mo + benefits. Same output, 70% less."
-
-CLOSE (5 min)
-"30-day trial: 50 leads, $5K. If you don't close any, I refund."
-=========================================
+[2 more systems in full system]
 </div>
-        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-
-        <h3 style="margin-top:20px;">⚙️ Setup (4 hours)</h3>
-        <ol>
-          <li>Sign up for LinkedIn Sales Navigator ($99/mo, free trial)</li>
-          <li>Sign up for Apollo.io ($49/mo)</li>
-          <li>Sign up for Instantly.ai ($30/mo)</li>
-          <li>Build 5 prospect lists in Apollo (5 different ICPs)</li>
-          <li>Verify 1,000 emails via Instantly</li>
-          <li>Write 3 cold email sequences</li>
-          <li>Build 1 LinkedIn sequence in Sales Navigator</li>
-          <li>Set up Calendly for booking calls</li>
-          <li>Set up a simple CRM (Notion or HubSpot free)</li>
-          <li>Launch: 100 emails/day + 30 LinkedIn DMs/day</li>
-        </ol>
-      </div>
-    </div><div class="system-block">
-      <div class="system-header" onclick="toggleSystem('s5')">
-        <div class="system-icon">💬</div>
-        <h2>System 5: AI Customer Service (FULL)</h2>
-        <span class="status">READY</span>
-      </div>
-      <div class="system-content" id="s5">
-        <p><strong>What you get:</strong> Deploy AI chatbots for e-commerce. Replace $3K/mo support rep with $200/mo AI. 10 clients = $60K/year.</p>
-        <h3 style="margin-top:20px;">📋 Chatbot Prompt Templates (5 Niches)</h3>
-        <div class="code-block">CHATBOT PROMPTS — 5 Niches
-=========================================
-
-NICHE 1: E-commerce (DTC)
-"You are the AI customer service assistant for [Brand]. Help with: order tracking, returns, sizing, product questions. TONE: Friendly, brief, 1-2 sentences. RULES: Confirm order #, 30-day returns, size chart link, escalate to human when uncertain."
-
-NICHE 2: SaaS (B2B)
-"You are the AI support assistant for [Product]. Help with: account issues, billing, feature questions, bug reports. TONE: Professional, concise. RULES: For bugs ask screenshots + browser + steps, never change billing without verification, escalate technical."
-
-NICHE 3: Local Service
-"You are the AI booking assistant for [Business]. Help with: reservations, modifications, hours, menu, cancellations. TONE: Warm, conversational. RULES: Confirm date/time/party/name/phone, never guess hours, capture special requests, escalate complex."
-
-NICHE 4: Real Estate
-"You are the AI assistant for [Agent]. Help with: property searches, viewing bookings, listing info, mortgage questions. TONE: Professional, consultative. RULES: Get criteria, 30-min viewing slots, never promise availability, refer mortgage to partners, 24h follow-up."
-
-NICHE 5: Course / Coaching
-"You are the AI support assistant for [Course]. Help with: access, technical issues, content questions, refunds. TONE: Encouraging, knowledgeable. RULES: Check account first, browser-specific technical, reference modules (never make up), escalate in-depth questions."
-=========================================
 </div>
-        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-
-        <h3 style="margin-top:20px;">💼 Sales Pitch: Replace a $3K/mo Hire</h3>
-        <div class="code-block">SALES SCRIPT — AI Customer Service
-=========================================
-
-OPENING
-"You currently spend $3K/mo on a customer service rep, right?"
-
-PROBLEM
-"That rep works 8 hours/day, takes vacations, calls in sick. 30-50 tickets/day."
-
-SOLUTION
-"My AI chatbot handles 70% of common questions 24/7. Never takes breaks. Scales instantly. $200-500/mo."
-
-MATH
-- Current: $3,000/mo, 30-50 tickets, 8 hours coverage
-- AI: $500/mo, 100-300 tickets, 24-hour coverage
-- Savings: $2,500/mo = $30K/year
-
-PROOF
-"60-70% of support tickets are 5-10 common questions. AI handles those instantly. Your human focuses on the 30% complex."
-
-OBJECTION HANDLING
-- "Customers want humans" → "They do — for the 30% complex. AI handles the 70% routine, faster."
-- "What if AI gets it wrong?" → "Escalates to human for anything unknown. Safer than a tired human at 5pm."
-
-CLOSE
-"30-day trial. $500. If it doesn't handle 50% of tickets, I refund."
-=========================================
 </div>
-        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
 
-        <h3 style="margin-top:20px;">⚙️ Setup (3 hours)</h3>
-        <ol>
-          <li>Sign up for Tidio ($29/mo Starter) or Chatbase ($19/mo)</li>
-          <li>Pick a niche (use the 5 templates above)</li>
-          <li>Customize chatbot prompt with brand's voice, products, FAQs</li>
-          <li>Connect to client's store (Shopify, WooCommerce, etc.)</li>
-          <li>Train on 20-50 real customer questions from history</li>
-          <li>Set escalation rules: complex questions → human email/Slack</li>
-          <li>Test with 20 questions, fix 5 most common gaps</li>
-          <li>Launch + monitor first week closely</li>
-        </ol>
-      </div>
-    </div>
+<div class="system-block">
+<div class="system-header" onclick="toggleSystem('s5')">
+<div class="system-icon">💬</div>
+<h2>System 5: AI Customer Service (FULL)</h2>
+<span class="status">READY</span>
+</div>
+<div class="system-content" id="s5">
+<p><strong>What you get:</strong> Set up AI customer service for e-commerce/SaaS. 5 industry scripts, escalation rules, KPI tracking. $1K-5K/month per client.</p>
+
+<h3>💬 5 Industry Prompt Packs</h3>
+<div class="code-block">CUSTOMER SERVICE PROMPTS
+========================
+
+E-COMMERCE PROMPT PACK:
+- Order tracking queries
+- Returns / refunds
+- Product questions
+- Shipping delays
+- 30+ ready prompts
+
+RESTAURANT PROMPT PACK:
+- Menu questions
+- Reservation booking
+- Order pickup
+- 25+ ready prompts
+
+EDUCATION PROMPT PACK:
+- Course inquiries
+- Enrollment questions
+- Schedule / pricing
+- 20+ ready prompts
+
+[2 more in full system]
+</div>
+</div>
+</div>
+
+</div>
 
 
-</html>
 
+</div>
 
-</html>
-
-
-</html>
-
-
-</html>
-
-
-</html>
-
-
-</html>
-
-
-</html>
-
-
-</html>
-
-
-</html>
+<script>
+function toggleSystem(id) {
+  const el = document.getElementById(id);
+  el.classList.toggle('open');
+}
+</script>
 
 
 </html>
@@ -809,9 +400,5 @@ CLOSE
 </div>
 </div>
 </footer>
-
-<div class="afdian-notice" style="background: linear-gradient(135deg, #ff6b6b 0%, #ff8e53 100%); color: white; padding: 20px 24px; border-radius: 12px; margin: 30px 0; text-align: center; box-shadow: 0 4px 12px rgba(255,107,107,0.2);">
-<p style="margin: 0; font-size: 1.05rem;">🇨🇳 <strong>国内用户专属:</strong> 也支持微信/支付宝(通过爱发电支付)</p>
-<a href="https://afdian.com/a/hzylw" target="_blank" rel="noopener" style="display: inline-block; background: white; color: #ff6b6b; padding: 10px 24px; border-radius: 8px; text-decoration: none; font-weight: 700; margin-top: 12px;">前往爱发电支付 →</a>
-</div></body>
+</body>
 </html>
