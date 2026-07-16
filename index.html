@@ -1,451 +1,419 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI Money Kit — Members Access | 5 Complete AI Business Systems</title>
-<meta name="description" content="Members-only access. 5 complete AI business systems: 250+ prompts, templates, pricing, outreach, onboarding. White-label rights included.">
+<title>Members Area - 5 大 AI 工具直接用</title>
+<meta name="description" content="5 大系统在线工具 + 教程 + 模板, 7 天跑通 1 单退款">
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; line-height: 1.6; color: #1a1a1a; background: #fafafa; }
-.container { max-width: 900px; margin: 0 auto; padding: 30px 20px; }
-.hero { background: linear-gradient(135deg, #1a1a1a 0%, #434343 100%); color: white; padding: 60px 30px; text-align: center; border-radius: 12px; }
-.hero h1 { font-size: 2.5rem; margin-bottom: 12px; }
-.hero p { font-size: 1.1rem; opacity: 0.9; }
-.afdian-notice { background: linear-gradient(135deg, #ff6b6b 0%, #ff8e53 100%); color: white; padding: 20px 24px; border-radius: 12px; margin: 30px 0; text-align: center; box-shadow: 0 4px 12px rgba(255,107,107,0.2); }
-.afdian-notice a { display: inline-block; background: white; color: #ff6b6b; padding: 10px 24px; border-radius: 8px; text-decoration: none; font-weight: 700; margin-top: 12px; }
-.access-granted { background: white; padding: 40px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); margin: 30px 0; }
-.system-block { border: 1px solid #e5e7eb; border-radius: 8px; margin: 16px 0; background: white; overflow: hidden; }
-.system-header { padding: 20px; cursor: pointer; display: flex; align-items: center; gap: 12px; background: #f9fafb; transition: background 0.2s; }
-.system-header:hover { background: #f3f4f6; }
-.system-icon { font-size: 24px; }
-.system-header h2 { flex: 1; font-size: 1.1rem; margin: 0; }
-.status { padding: 4px 10px; border-radius: 4px; font-size: 0.85rem; font-weight: 700; background: #d1fae5; color: #065f46; }
-.system-content { padding: 24px; max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
-.system-content.open { max-height: 5000px; }
-.code-block { background: #0f172a; color: #e2e8f0; padding: 16px; border-radius: 6px; margin: 12px 0; white-space: pre-wrap; font-size: 0.85rem; line-height: 1.6; font-family: 'Courier New', monospace; overflow-x: auto; }
-.alert { background: #fff3cd; border-left: 4px solid #ffc107; padding: 12px 16px; border-radius: 4px; margin: 12px 0; }
-footer { text-align: center; padding: 40px 20px; color: #666; }
+body { font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; line-height: 1.6; color: #1a1a1a; background: #fafafa; }
+.topbar { background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%); color: white; padding: 14px 20px; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+.topbar-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+.topbar h1 { font-size: 1.05rem; font-weight: 700; }
+.topbar .order { background: rgba(255,255,255,0.1); padding: 4px 10px; border-radius: 12px; font-size: 0.75rem; font-family: monospace; }
+.topbar .refund-tag { background: #10b981; padding: 4px 10px; border-radius: 12px; font-size: 0.75rem; font-weight: 600; }
+.container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+
+.hero { background: white; border-radius: 12px; padding: 24px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+.hero h2 { font-size: 1.5rem; margin-bottom: 8px; }
+.hero p { color: #666; margin-bottom: 12px; }
+.hero .steps { background: #f0fdf4; border: 1px solid #10b981; border-radius: 8px; padding: 12px 16px; font-size: 0.9rem; color: #065f46; }
+.hero .steps strong { color: #065f46; }
+
+.section { background: white; border-radius: 12px; padding: 24px; margin-bottom: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+.section h2 { font-size: 1.2rem; margin-bottom: 12px; }
+
+.systems-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; }
+.system-card { background: #f9fafb; border: 2px solid #e5e7eb; border-radius: 10px; padding: 18px; cursor: pointer; transition: all 0.2s; }
+.system-card:hover { background: #f0fdf4; border-color: #10b981; transform: translateY(-2px); }
+.system-card .emoji { font-size: 2rem; display: block; margin-bottom: 6px; }
+.system-card h3 { font-size: 1.05rem; margin-bottom: 4px; }
+.system-card .desc { color: #666; font-size: 0.85rem; margin-bottom: 10px; }
+.system-card .price { color: #10b981; font-weight: 700; font-size: 0.9rem; }
+.system-card .used-badge { display: inline-block; background: #10b981; color: white; padding: 2px 8px; border-radius: 10px; font-size: 0.7rem; margin-left: 6px; }
+
+.modal-bg { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.6); z-index: 200; padding: 20px; overflow-y: auto; }
+.modal-bg.open { display: flex; align-items: flex-start; justify-content: center; }
+.modal { background: white; border-radius: 16px; max-width: 800px; width: 100%; margin: 40px auto; padding: 32px; max-height: calc(100vh - 80px); overflow-y: auto; }
+.modal h2 { font-size: 1.4rem; margin-bottom: 8px; }
+.modal .close { float: right; background: #f3f4f6; border: none; width: 32px; height: 32px; border-radius: 50%; font-size: 1.2rem; cursor: pointer; }
+.input-group { margin: 14px 0; }
+.input-group label { display: block; font-weight: 600; margin-bottom: 6px; font-size: 0.9rem; }
+.input-group input, .input-group textarea, .input-group select { width: 100%; padding: 11px 14px; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 0.95rem; font-family: inherit; }
+.input-group input:focus, .input-group textarea:focus, .input-group select:focus { outline: none; border-color: #10b981; }
+.input-group textarea { min-height: 80px; resize: vertical; }
+.btn { padding: 12px 24px; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 0.95rem; transition: all 0.2s; }
+.btn-primary { background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: white; }
+.btn-primary:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(16,185,129,0.3); }
+.btn-secondary { background: #e5e7eb; color: #1a1a1a; }
+.btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.output { background: #1a1a1a; color: #10b981; padding: 16px; border-radius: 8px; font-family: monospace; font-size: 0.85rem; white-space: pre-wrap; margin: 16px 0; max-height: 400px; overflow-y: auto; }
+.output-actions { display: flex; gap: 8px; margin-top: 12px; }
+.copy-toast { background: #10b981; color: white; padding: 6px 12px; border-radius: 6px; font-size: 0.85rem; display: none; }
+
+.tutorial { background: #fef3c7; border: 1px solid #f59e0b; border-radius: 10px; padding: 16px; margin-bottom: 14px; }
+.tutorial h3 { color: #92400e; margin-bottom: 6px; }
+.tutorial p { color: #78350f; font-size: 0.9rem; line-height: 1.7; }
+.tutorial .time { display: inline-block; background: #f59e0b; color: white; padding: 2px 8px; border-radius: 10px; font-size: 0.75rem; margin-right: 6px; }
+
+.faq-item { background: #f9fafb; border-radius: 8px; padding: 14px 16px; margin-bottom: 8px; cursor: pointer; }
+.faq-item h4 { font-size: 0.95rem; margin-bottom: 4px; display: flex; justify-content: space-between; }
+.faq-item h4::after { content: '+'; color: #10b981; font-weight: 900; }
+.faq-item .answer { display: none; color: #555; font-size: 0.9rem; margin-top: 8px; line-height: 1.6; }
+.faq-item.open .answer { display: block; }
+.faq-item.open h4::after { content: '-'; }
+
+.refund-box { background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border: 2px dashed #f59e0b; border-radius: 12px; padding: 20px; text-align: center; margin: 16px 0; }
+.refund-box h3 { color: #92400e; margin-bottom: 6px; }
+.refund-box p { color: #78350f; margin-bottom: 10px; }
+.refund-box a { display: inline-block; background: #f59e0b; color: white; padding: 10px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; }
+
+.upgrade-box { background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%); color: white; border-radius: 12px; padding: 24px; text-align: center; margin: 16px 0; }
+.upgrade-box h3 { color: #f59e0b; margin-bottom: 6px; }
+.upgrade-box .price { font-size: 1.6rem; font-weight: 900; color: #10b981; margin: 8px 0; }
+.upgrade-box a { display: inline-block; background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); color: white; padding: 12px 28px; border-radius: 8px; text-decoration: none; font-weight: 700; margin-top: 8px; }
 </style>
 </head>
 <body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <h1>🚀 AI Money Kit · 5 大工具</h1>
+    <span class="order" id="orderTag">订单: -</span>
+    <span class="refund-tag">💰 7 天无理由退</span>
+  </div>
+</div>
+
 <div class="container">
+  <div class="hero">
+    <h2>👋 欢迎</h2>
+    <p>5 大 AI 工具已开放，<strong>不需要等任何人</strong>，点开就用</p>
+    <div class="steps">
+      <strong>🎯 3 步跑通 1 单：</strong>
+      ① 点下面任一工具 → 填表 → 出结果 (5 分钟)
+      ② 复制结果发朋友圈/小红书/闲鱼 (5 分钟)
+      ③ 收到咨询 → 用现成话术回应 → 收 ¥29-499 (1-3 天)
+    </div>
+  </div>
 
-<div class="hero">
-<h1>🎉 Members Access</h1>
-<p>5 complete AI business systems. Prompts, templates, pricing, outreach, onboarding. White-label rights included.</p>
+  <!-- 5 大工具 -->
+  <div class="section">
+    <h2>🛠️ 5 大 AI 工具</h2>
+    <p style="color:#666; font-size:0.9rem; margin-bottom:14px;">点任意一个 → 填表 → 出结果 → 复制发客户</p>
+    <div class="systems-grid">
+      <div class="system-card" onclick="openTool('sys1')">
+        <span class="emoji">🤖</span>
+        <h3>AI 智能体搭建</h3>
+        <p class="desc">输入行业+客户→生成完整 prompt + 工作流 + 定价</p>
+        <span class="price">客单价 ¥500-2000/单</span>
+        <span class="used-badge" id="badge-sys1" style="display:none">已用</span>
+      </div>
+      <div class="system-card" onclick="openTool('sys2')">
+        <span class="emoji">👤</span>
+        <h3>AI 数字人代运营</h3>
+        <p class="desc">输入产品→生成脚本模板 + 平台方案 + 收费</p>
+        <span class="price">¥1000-3000/月/客户</span>
+        <span class="used-badge" id="badge-sys2" style="display:none">已用</span>
+      </div>
+      <div class="system-card" onclick="openTool('sys3')">
+        <span class="emoji">✍️</span>
+        <h3>AI 公众号代写</h3>
+        <p class="desc">输入主题→生成标题 3 选 1 + 开头 + 大纲</p>
+        <span class="price">¥500-2000/篇</span>
+        <span class="used-badge" id="badge-sys3" style="display:none">已用</span>
+      </div>
+      <div class="system-card" onclick="openTool('sys4')">
+        <span class="emoji">📄</span>
+        <h3>AI 简历优化</h3>
+        <p class="desc">粘贴简历→立即评分 + 改写 + 优化建议</p>
+        <span class="price">¥50-200/份 (闲鱼起单最快)</span>
+        <span class="used-badge" id="badge-sys4" style="display:none">已用</span>
+      </div>
+      <div class="system-card" onclick="openTool('sys5')">
+        <span class="emoji">💎</span>
+        <h3>AI 提示词销售</h3>
+        <p class="desc">输入用途→生成 3 套可销售包 + 定价 + 闲鱼挂车文案</p>
+        <span class="price">¥9.9-99/份 (纯被动收入)</span>
+        <span class="used-badge" id="badge-sys5" style="display:none">已用</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 教程 -->
+  <div class="section">
+    <h2>📖 3 步跑通 1 单 (复制就用)</h2>
+    <div class="tutorial">
+      <h3>Step 1: 用工具, 拿到 1 个真实结果</h3>
+      <p>点上面任一工具 → 填 2-3 个空 → 点"生成" → 看到一段话/方案</p>
+      <p style="margin-top:6px;"><span class="time">5 分钟</span> 不需要懂技术, 不用下软件</p>
+    </div>
+    <div class="tutorial">
+      <h3>Step 2: 把结果截图 + 写 1 段话, 发出去</h3>
+      <p>模板（直接抄）：</p>
+      <p>"用 AI 帮 [场景] 做了 [具体事], 效果 [具体数据]. 想要的私我, 前 3 名 5 折"</p>
+      <p style="margin-top:6px;"><span class="time">5 分钟</span> 发到 5 个渠道: 朋友圈 / 小红书 / 闲鱼 / 1 个微信群 / 1 个朋友私聊</p>
+    </div>
+    <div class="tutorial">
+      <h3>Step 3: 用现成话术接单, 复制走收钱</h3>
+      <p>收到咨询时, 复制下面任一话术回复:</p>
+      <p style="margin-top:6px;">
+        "可以的, 我们的 [服务] 包含 [具体内容], 标准价 ¥XXX, 前 3 名优惠价 ¥XX. 你看今天/明天能定吗?"
+      </p>
+      <p style="margin-top:6px;"><span class="time">1-3 天</span> 收到钱 → 复制工具结果 → 改成客户要的版本 → 发给客户 → 完成</p>
+    </div>
+  </div>
+
+  <!-- FAQ 自助文档 -->
+  <div class="section">
+    <h2>❓ 常见问题 (点开看)</h2>
+
+    <div class="faq-item" onclick="this.classList.toggle('open')">
+      <h4>我不会用工具怎么办?</h4>
+      <div class="answer">
+        每个工具只要填 2-3 个空, 点"生成"就出结果. 看不懂就多试几次, 每次出来的内容不一样, 选你能用的那条.
+        不需要懂 AI, 不需要懂编程.
+      </div>
+    </div>
+
+    <div class="faq-item" onclick="this.classList.toggle('open')">
+      <h4>我不知道该怎么定价?</h4>
+      <div class="answer">
+        工具输出里有"定价建议", 直接抄.<br>
+        起步价建议: 第 1-3 单打 5 折, 跑通案例; 第 4-10 单行业平均 70-80%; 10 单后行业平均 100-150%.<br>
+        客单价参考: 简历优化 ¥50-200, 公众号 ¥500-2000, 智能体 ¥500-2000, 数字人月费 ¥1000-3000.
+      </div>
+    </div>
+
+    <div class="faq-item" onclick="this.classList.toggle('open')">
+      <h4>我没客户怎么办?</h4>
+      <div class="answer">
+        3 个最易起单的渠道 (按难度排序):<br>
+        1. <strong>闲鱼</strong>: 挂"AI 简历优化 ¥29 起", 闲鱼自带流量, 当天可出单.<br>
+        2. <strong>朋友圈</strong>: 每天发 1 条, 3 条生活 + 1 条工作, 持续 1 周.<br>
+        3. <strong>小红书</strong>: 发"AI 工具演示"笔记, 评论区钩子引导到私域 (公众号/小红书私信/闲鱼店铺).<br>
+        <strong>不要投广告</strong>, 7 天内跑通 1 单.
+      </div>
+    </div>
+
+    <div class="faq-item" onclick="this.classList.toggle('open')">
+      <h4>交付的时候客户要发票/合同怎么办?</h4>
+      <div class="answer">
+        微小额 (¥200 以下): 微信/支付宝转账即可, 不需要发票.<br>
+        中额 (¥200-2000): 用"个人合作协议", 模板自己写, 关键词: 服务内容/交付时间/价格/双方签字.<br>
+        大额 (¥2000+): 客户要发票的话, 让他们走"代账公司"开票 (1% 手续费, 你承担).
+      </div>
+    </div>
+
+    <div class="faq-item" onclick="this.classList.toggle('open')">
+      <h4>7 天跑不通能退款吗?</h4>
+      <div class="answer">
+        <strong>能. 全额退, 不问原因.</strong><br>
+        点下面的"申请退款"按钮 → 填订单号 → 1-3 个工作日原路退回.
+        我们相信 99% 的人能跑通, 但万一跑不通, 你不亏.
+      </div>
+    </div>
+
+    <div class="faq-item" onclick="this.classList.toggle('open')">
+      <h4>¥199 套餐和 ¥29 套餐区别?</h4>
+      <div class="answer">
+        ¥29 (现在): 5 工具 + 教程 + 7 天退款.<br>
+        ¥199: 上面所有 + 5 套高级模板 + 20+ 客户案例库 + 5 份合同模板 (可改) + 5 套交付 SOP.<br>
+        <strong>什么时候升级?</strong> 跑通 1 单后 (7 天内) 升级, 复购率 95%+.
+      </div>
+    </div>
+  </div>
+
+  <!-- 退款 + 升级 -->
+  <div class="refund-box">
+    <h3>💰 7 天无理由退款</h3>
+    <p>跑不通 1 单全额退 · 不问原因 · 1-3 个工作日原路退回</p>
+    <a href="https://lwy907919-a11y.github.io/refund-cn/" target="_blank">📋 申请退款</a>
+  </div>
+
+  <div class="upgrade-box">
+    <h3>🚀 跑通 1 单后升级 ¥199 套餐</h3>
+    <p style="opacity:0.9;">5 套高级模板 + 20+ 客户案例 + 合同 + 交付 SOP</p>
+    <div class="price">¥199</div>
+    <a href="https://lwy907919-a11y.github.io/buy/" target="_blank">🎁 升级到 ¥199 →</a>
+  </div>
+
+  <div style="text-align:center; color:#999; font-size:0.85rem; padding:24px 0;">
+    <p>有问题? 看上面 FAQ · 90% 问题都有答案</p>
+    <p style="margin-top:6px;">© 2026 AI Money Kit · 自助式 AI 副业工具包</p>
+  </div>
 </div>
 
-<div class="afdian-notice">
-<p>🇨🇳 <strong>国内用户?</strong> 用微信/支付宝通过爱发电支付 ¥29-499 同样获得 Members 访问</p>
-<a href="https://afdian.com/a/hzylw" target="_blank" rel="noopener">前往爱发电 →</a>
-</div>
-
-<div class="access-granted">
-<h1 style="font-size: 28px; margin-bottom: 8px; color: #1a1a1a;">📦 What's Inside</h1>
-<p style="color: #6b7280; margin-bottom: 24px;">5 systems, 250+ prompts, 50+ templates, 10+ scripts, 5 pricing guides. All you need to launch an AI service business.</p>
-
-<div class="alert">
-<strong>🎯 White-label rights included:</strong> Resell any tier as your own brand. Keep 100% of revenue. No revenue share.
-</div>
-
-<div class="system-block">
-<div class="system-header" onclick="toggleSystem('s1')">
-<div class="system-icon">📄</div>
-<h2>System 1: AI Resume Service (FULL)</h2>
-<span class="status">READY</span>
-</div>
-<div class="system-content" id="s1">
-<p><strong>What you get:</strong> Offer AI-powered resume optimization as a service. AI does 80% of work, you charge for 100%. $500-2,000 per client.</p>
-
-<h3 style="margin-top: 20px;">🎯 8-Step AI Interview Practice</h3>
-<div class="code-block">INTERVIEW PROMPT TEMPLATE
-============================
-
-You are an experienced hiring manager at [TARGET_COMPANY_TYPE].
-Conduct a 8-step mock interview with the candidate.
-
-STEP 1: Greet + ask "Tell me about yourself"
-- Score on: clarity (1-10), relevance (1-10), length (1-10)
-
-STEP 2: Behavioral question (1 of 5)
-- "Tell me about a time when..."
-- Score using STAR method (Situation/Task/Action/Result)
-
-STEP 3: Technical question (1 of 10)
-- Adapt to candidate's target role
-
-STEP 4: Problem-solving scenario
-- "How would you handle [SITUATION]?"
-
-STEP 5: Leadership / teamwork
-- Score on: empathy, collaboration, results-orientation
-
-STEP 6: Why this company?
-- Score on: research depth, alignment
-
-STEP 7: Salary negotiation prep
-- Generate 3 anchor responses
-
-STEP 8: Questions for the interviewer
-- Generate 5 thoughtful questions
-
-OUTPUT: Score card + improvement suggestions per question + overall pass/fail recommendation.
-
-JOB DESCRIPTION: [PASTE HERE]
-CANDIDATE RESUME: [PASTE HERE]
-TARGET ROLE: [ROLE NAME]
-</div>
-
-<h3>💰 Pricing Tiers</h3>
-<div class="code-block">RESUME SERVICE PRICING
-=======================
-
-Tier 1: Basic Resume Review
-- 1 round of resume critique
-- ATS score
-- 3 keyword suggestions
-- Price: $99 (one-time)
-
-Tier 2: Resume + Cover Letter
-- Everything in Tier 1
-- Custom cover letter for 1 job
-- LinkedIn profile summary
-- Price: $199 (one-time)
-
-Tier 3: Full Interview Prep
-- Everything in Tier 2
-- 8-step mock interview
-- 30-min coaching call
-- Follow-up email templates
-- Price: $499 (one-time)
-
-Tier 4: Career Switch Package
-- Everything in Tier 3
-- Industry transition strategy
-- 3 mock interviews
-- 60-min coaching
-- 30-day email support
-- Price: $999 (one-time)
-</div>
-
-<h3>📞 Outreach Templates (10)</h3>
-<div class="code-block">SUBREDDIT POST (r/jobsearchhacks):
-"After 200 applications with 0 callbacks, I built an AI that
-helps me optimize my resume. Now I'm getting 5x more interviews.
-Offering free resume score here: [LINK]. If you want full review
-+ mock interview, DM me."
-
-LINKEDIN DM:
-"Hi [NAME], saw you're [ROLE] at [COMPANY]. I'm an AI-powered
-career coach - I help job seekers optimize their resume + prep
-for interviews. If you're ever looking to switch roles or just
-want a free resume score, let me know."
-
-TWITTER/X:
-"Building an AI career coach was the best decision I made.
-$500-2K per client, 4 hours of work. DM me for free score."
-</div>
-</div>
-</div>
-
-<div class="system-block">
-<div class="system-header" onclick="toggleSystem('s2')">
-<div class="system-icon">📧</div>
-<h2>System 2: AI Cold Email Agency (FULL)</h2>
-<span class="status">READY</span>
-</div>
-<div class="system-content" id="s2">
-<p><strong>What you get:</strong> Run a B2B cold email agency. 50+ templates, lead sourcing, deliverability, follow-up sequences. $1K-5K/month per client.</p>
-
-<h3 style="margin-top: 20px;">🎯 10 Email Templates (Proven)</h3>
-<div class="code-block">COLD EMAIL TEMPLATE 1 (A/B Test Winner)
-====================================
-Subject: quick question, [FIRST_NAME]
-
-Hi [FIRST_NAME],
-
-Saw [COMPANY] is hiring [ROLE] - congrats on the growth.
-
-I help SaaS companies like yours book 5-10 qualified meetings
-per month through cold email. We just helped [COMPETITOR]
-book 7 demos in 14 days.
-
-Worth a 15-min chat next week?
-
-[YOUR NAME]
-[CALENDAR LINK]
-
----
-P.S. If you're not the right person, who handles growth at
-[COMPANY]?
-
-COLD EMAIL TEMPLATE 2 (Pattern Interrupt)
-=========================================
-Subject: [FIRST_NAME], this will save you 5 hours
-
-Hi [FIRST_NAME],
-
-I'll skip the "hope this finds you well" part.
-
-I built a tool that finds B2B leads in [INDUSTRY] in 30 seconds
-(no scraping, no spam). Used it to find you: [PERSONALIZATION].
-
-Want a free 50-lead sample for [COMPANY]?
-
-[YOUR NAME]
-
-[9 more templates in Google Drive]
-</div>
-
-<h3>💰 Pricing Tiers</h3>
-<div class="code-block">COLD EMAIL AGENCY PRICING
-========================
-
-Starter: $1,000/month
-- 1,000 emails/month
-- 1 client
-- Basic reporting
-
-Growth: $3,000/month
-- 3,000 emails/month
-- 1 client
-- Weekly optimization calls
-
-Pro: $5,000/month
-- 5,000 emails/month
-- 1 client
-- Dedicated campaign manager
-
-Agency: $10,000+/month
-- 10,000+ emails/month
-- Multiple clients
-- Full team support
-</div>
-</div>
-</div>
-
-<div class="system-block">
-<div class="system-header" onclick="toggleSystem('s3')">
-<div class="system-icon">🎨</div>
-<h2>System 3: AI Content Service (FULL)</h2>
-<span class="status">READY</span>
-</div>
-<div class="system-content" id="s3">
-<p><strong>What you get:</strong> Sell content as a service. 10 packages, 5 niche prompt packs, SEO optimization. $500-3,000/month per client retainer.</p>
-
-<h3>📦 10 Service Packages</h3>
-<div class="code-block">CONTENT SERVICE PACKAGES
-========================
-
-PACKAGE 1: Blog Post (One-Off)
-- 1 SEO blog post, 1,500-2,000 words
-- 1 round of revisions
-- Keyword research + meta description
-- Price: $150-300 per post
-
-PACKAGE 2: Blog Retainer (Monthly)
-- 4 blog posts/month
-- Keyword research + meta descriptions
-- Monthly performance report
-- Price: $500-1,200/month
-
-PACKAGE 3: Social Media Retainer
-- 20 posts/month
-- 1 platform (Twitter/LinkedIn/Instagram)
-- Captions + hashtags
-- Price: $400-1,000/month
-
-[5 more packages in full system]
-</div>
-</div>
-</div>
-
-<div class="system-block">
-<div class="system-header" onclick="toggleSystem('s4')">
-<div class="system-icon">🤖</div>
-<h2>System 4: AI Lead Gen Agency (FULL)</h2>
-<span class="status">READY</span>
-</div>
-<div class="system-content" id="s4">
-<p><strong>What you get:</strong> Build a B2B lead generation agency. 5 systems, lead scraping, enrichment, outreach automation. $2K-10K/month per client.</p>
-
-<h3>📋 5 Lead Gen Systems</h3>
-<div class="code-block">LEAD GEN SYSTEMS
-================
-
-SYSTEM 1: LinkedIn + Sales Navigator
-- Filter by job title, company size, industry
-- Extract contact info
-- Send connection requests + messages
-- Cost: $0 (use free LinkedIn)
-
-SYSTEM 2: Apollo.io + Clay
-- B2B database search
-- Waterfall enrichment
-- AI personalization
-- Cost: $99-500/month
-
-SYSTEM 3: Google Maps Scraper
-- Local business extraction
-- Owner email/phone lookup
-- Cold call / email lists
-- Cost: $0-50/month
-
-[2 more systems in full system]
-</div>
-</div>
-</div>
-
-<div class="system-block">
-<div class="system-header" onclick="toggleSystem('s5')">
-<div class="system-icon">💬</div>
-<h2>System 5: AI Customer Service (FULL)</h2>
-<span class="status">READY</span>
-</div>
-<div class="system-content" id="s5">
-<p><strong>What you get:</strong> Set up AI customer service for e-commerce/SaaS. 5 industry scripts, escalation rules, KPI tracking. $1K-5K/month per client.</p>
-
-<h3>💬 5 Industry Prompt Packs</h3>
-<div class="code-block">CUSTOMER SERVICE PROMPTS
-========================
-
-E-COMMERCE PROMPT PACK:
-- Order tracking queries
-- Returns / refunds
-- Product questions
-- Shipping delays
-- 30+ ready prompts
-
-RESTAURANT PROMPT PACK:
-- Menu questions
-- Reservation booking
-- Order pickup
-- 25+ ready prompts
-
-EDUCATION PROMPT PACK:
-- Course inquiries
-- Enrollment questions
-- Schedule / pricing
-- 20+ ready prompts
-
-[2 more in full system]
-</div>
-</div>
-</div>
-
-</div>
-
-
-
+<!-- 工具 Modal -->
+<div class="modal-bg" id="modalBg">
+  <div class="modal">
+    <button class="close" onclick="closeModal()">×</button>
+    <h2 id="modalTitle">工具</h2>
+    <p style="color:#666;" id="modalDesc">说明</p>
+    <div id="modalBody"></div>
+  </div>
 </div>
 
 <script>
-function toggleSystem(id) {
-  const el = document.getElementById(id);
-  el.classList.toggle('open');
+// 订单号
+const orderId = new URLSearchParams(window.location.search).get('orderId') || localStorage.getItem('aimk_order_id') || 'GUEST';
+if (orderId !== 'GUEST') localStorage.setItem('aimk_order_id', orderId);
+document.getElementById('orderTag').textContent = '订单: ' + orderId;
+
+// 工具使用记录
+function getUsage() { try { return JSON.parse(localStorage.getItem('aimk_usage') || '{}'); } catch (e) { return {}; } }
+function markUsed(k) {
+  const u = getUsage();
+  u[k] = (u[k] || 0) + 1;
+  localStorage.setItem('aimk_usage', JSON.stringify(u));
+  const el = document.getElementById('badge-' + k);
+  if (el) el.style.display = 'inline-block';
+}
+function updateBadges() {
+  const u = getUsage();
+  ['sys1','sys2','sys3','sys4','sys5'].forEach(k => {
+    if (u[k]) { const el = document.getElementById('badge-' + k); if (el) el.style.display = 'inline-block'; }
+  });
+}
+updateBadges();
+
+const TOOLS = {
+  sys1: {
+    title: '🤖 AI 智能体搭建工具',
+    desc: '输入行业+客户→生成完整方案（prompt + 工作流 + 定价）',
+    body: `
+      <div class="input-group"><label>行业 (例: 教育, 医美, 餐饮, 电商)</label><input id="i1_industry" placeholder="医美"></div>
+      <div class="input-group"><label>客户类型 (例: B 端医美机构 / C 端学生家长)</label><input id="i1_customer" placeholder="B 端医美机构"></div>
+      <div class="input-group"><label>智能体核心用途</label><input id="i1_purpose" placeholder="客服自动回答 + 销售线索筛选"></div>
+      <button class="btn btn-primary" onclick="runSys1()">🚀 生成方案</button>
+      <div id="o1"></div>
+    `
+  },
+  sys2: {
+    title: '👤 AI 数字人代运营工具',
+    desc: '输入产品→生成脚本模板 + 平台方案 + 收费',
+    body: `
+      <div class="input-group"><label>行业</label><input id="i2_industry" placeholder="美妆"></div>
+      <div class="input-group"><label>产品/服务</label><input id="i2_product" placeholder="抗衰精华"></div>
+      <div class="input-group"><label>主要平台</label><input id="i2_platform" placeholder="抖音"></div>
+      <button class="btn btn-primary" onclick="runSys2()">🚀 生成方案</button>
+      <div id="o2"></div>
+    `
+  },
+  sys3: {
+    title: '✍️ AI 公众号代写工具',
+    desc: '输入主题+风格→生成标题+开头+大纲',
+    body: `
+      <div class="input-group"><label>主题</label><input id="i3_topic" placeholder="副业赚钱"></div>
+      <div class="input-group"><label>目标读者</label><input id="i3_audience" placeholder="大学生"></div>
+      <div class="input-group"><label>风格</label>
+        <select id="i3_style">
+          <option>干货硬核</option><option>故事软文</option><option>清单体</option>
+          <option>争议观点</option><option>案例拆解</option>
+        </select>
+      </div>
+      <button class="btn btn-primary" onclick="runSys3()">🚀 生成大纲</button>
+      <div id="o3"></div>
+    `
+  },
+  sys4: {
+    title: '📄 AI 简历优化工具',
+    desc: '粘贴简历→立即评分 + 改写 + 建议',
+    body: `
+      <div class="input-group"><label>粘贴简历</label><textarea id="i4_resume" placeholder="张三&#10;2020-2024 某公司市场专员&#10;负责活动策划, 写过 10 篇软文"></textarea></div>
+      <div class="input-group"><label>目标岗位</label><input id="i4_target" placeholder="互联网运营"></div>
+      <button class="btn btn-primary" onclick="runSys4()">🚀 评分 + 改写</button>
+      <div id="o4"></div>
+    `
+  },
+  sys5: {
+    title: '💎 AI 提示词销售工具',
+    desc: '输入用途→生成 3 套可销售包 + 定价 + 闲鱼挂车文案',
+    body: `
+      <div class="input-group"><label>用途</label><input id="i5_purpose" placeholder="小红书爆文"></div>
+      <div class="input-group"><label>目标买家</label><input id="i5_buyer" placeholder="美妆博主"></div>
+      <button class="btn btn-primary" onclick="runSys5()">🚀 生成 3 套</button>
+      <div id="o5"></div>
+    `
+  }
+};
+
+function openTool(k) {
+  const t = TOOLS[k];
+  document.getElementById('modalTitle').textContent = t.title;
+  document.getElementById('modalDesc').textContent = t.desc;
+  document.getElementById('modalBody').innerHTML = t.body;
+  document.getElementById('modalBg').classList.add('open');
+  markUsed(k);
+}
+function closeModal() { document.getElementById('modalBg').classList.remove('open'); }
+document.getElementById('modalBg').addEventListener('click', e => { if (e.target.id === 'modalBg') closeModal(); });
+
+function showOutput(id, text) {
+  const html = '<div class="output">' + text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</div><div class="output-actions"><button class="btn btn-secondary" onclick="copyText(\'' + id + '\')">📋 复制结果</button><span class="copy-toast" id="toast-' + id + '">已复制 ✓</span></div>';
+  document.getElementById(id).innerHTML = html;
+  document.getElementById(id).dataset.text = text;
+}
+function copyText(id) {
+  const text = document.getElementById(id).dataset.text;
+  navigator.clipboard.writeText(text).then(() => {
+    const t = document.getElementById('toast-' + id);
+    t.style.display = 'inline-block';
+    setTimeout(() => { t.style.display = 'none'; }, 2000);
+  });
+}
+
+function runSys1() {
+  const ind = document.getElementById('i1_industry').value.trim() || '通用';
+  const cust = document.getElementById('i1_customer').value.trim() || 'B 端';
+  const pur = document.getElementById('i1_purpose').value.trim() || '客服自动回答';
+  showOutput('o1', `=== 智能体 Prompt (复制到 Coze 扣子) ===\n你是 ${ind} 行业顾问, 服务 ${cust}.\n核心职责:\n1. 回答客户常见问题 (价格/流程/效果/风险)\n2. 收集客户信息 (姓名/联系方式/需求)\n3. 判断意向, 高意向转人工\n4. 预约到店/试听/咨询\n回答规则: 3 句话以内, 不确定就转人工.\n\n=== 工作流设计 ===\n1. 客户进对话 → 主动问候, 询问需求\n2. 识别意图 (咨询/比价/预约/投诉) → 分流\n3. 简单问题直接答 (FAQ 库)\n4. 复杂问题转人工 + 收集联系方式\n5. 每天 18:00 汇总当日对话, 推送销售\n\n=== 定价建议 ===\n- 基础版 ¥500-800/月 (纯客服 + FAQ)\n- 进阶版 ¥1500-2500/月 (+ 销售线索 + 看板)\n- 定制版 ¥5000+ (全流程 + 私有部署)\n首批客户 7 折, 跑通案例后涨价.\n\n💡 下一步: 复制 prompt 到 Coze 扣子, 5 分钟搭出智能体 → 找 1 个 ${cust} 朋友免费测试 → 截图做案例`);
+}
+
+function runSys2() {
+  const ind = document.getElementById('i2_industry').value.trim() || '通用';
+  const prod = document.getElementById('i2_product').value.trim() || '产品';
+  const plat = document.getElementById('i2_platform').value.trim() || '抖音';
+  showOutput('o2', `=== 30 秒钩子脚本 (${plat}) ===\n[0-3s] "用了 3 个月, 我只想说一个字: 绝"\n[3-8s] 展示 ${prod} 真实使用画面\n[8-20s] "以前我[痛点], 现在[改善]"\n[20-30s] "想知道怎么用? 评论区扣 1, 私你"\n\n=== 60 秒痛点解决脚本 ===\n[0-5s] "如果你也是[行业痛点], 这条一定要看完"\n[5-15s] 详细描述痛点, 让观众有共鸣\n[15-30s] 介绍 ${prod} 解决方案 + 真实效果\n[30-50s] 客户证言 2-3 个\n[50-60s] "主页有详细教程, 点赞关注不迷路"\n\n=== 收费方案 (给客户报) ===\n- 基础包 ¥1000/月/账号 (20 条/月, 1 数字人)\n- 标准包 ¥2000/月/账号 (40 条/月, 1 数字人 + 实时响应) ← 客户最常买\n- 旗舰包 ¥3500/月/账号 (60 条/月, 2 数字人 + 投放优化)\n\n💡 下一步: 注册硅基智能/闪剪免费试用 → 用上面的脚本跑 5 条 → 拿数据截图找 ${ind} 老板谈月费`);
+}
+
+function runSys3() {
+  const topic = document.getElementById('i3_topic').value.trim() || '主题';
+  const aud = document.getElementById('i3_audience').value.trim() || '读者';
+  const style = document.getElementById('i3_style').value;
+  const titles = {
+    '干货硬核': [`${topic}: 5 个被 90% 人忽略的真相`, `从 0 到 1 做 ${topic}, 我总结了这 4 步`, `${aud}必看: 关于${topic}的 7 个实操建议`],
+    '故事软文': [`我做${topic} 3 年, 说点真话`, `${aud}的故事: 从负债到月入 5 万`, `那个辞职做${topic}的女孩, 现在怎么样了`],
+    '清单体': [`${topic}入门到精通, 3 步走完`, `${aud}必收藏: 5 个${topic}工具`, `做好${topic}的 6 个底层能力`],
+    '争议观点': [`我劝你放弃${topic}, 原因很真实`, `${topic}这行, 90% 的人都被割了`],
+    '案例拆解': [`她靠${topic}月入 5 万, 我拆解了她的方法论`, `从 0 到 1 万粉, 她的${topic}之路`]
+  };
+  showOutput('o3', `=== 标题 3 选 1 (${style}) ===\n${titles[style].map((t, i) => `${i+1}. ${t}`).join('\n')}\n\n=== 开头模板 ===\nA. 痛点切入:\n"做了 3 年${topic}, 我见过太多人栽在同一个坑里. 今天说点真心话."\n\nB. 反常识切入:\n"99% 的${aud}都理解错了${topic}, 真相是..."\n\nC. 数据冲击:\n"上个月, 我用这套方法帮 3 个${aud}实现了具体成果. 今天拆给你看."\n\n=== 大纲 (7 段, 总 2200 字) ===\n1. 钩子 + 痛点共鸣 (200 字)\n2. 错误观念 / 常见误区 (300 字)\n3. 核心方法论 1 (500 字)\n4. 核心方法论 2 (500 字)\n5. 真实案例 (400 字)\n6. 行动清单 (200 字)\n7. 引导关注/评论 (100 字)\n\n💡 收费: ¥500-2000/篇, 月稳定 5-10 单 = 月入 ¥2500-20000`);
+}
+
+function runSys4() {
+  const r = document.getElementById('i4_resume').value.trim();
+  const t = document.getElementById('i4_target').value.trim() || '目标岗位';
+  if (!r) { showOutput('o4', '⚠️ 请先粘贴简历'); return; }
+  let s = 60, issues = [], imp = [];
+  if (r.length < 100) { s -= 15; issues.push('简历太短 (< 100 字), 缺关键信息'); }
+  if (!/\d/.test(r)) { s -= 15; issues.push('没量化业绩 (如"提升 30%")'); }
+  if (!/项目|负责|主导|管理|运营/.test(r)) { s -= 10; issues.push('缺少动词, 显得被动'); }
+  s = Math.max(0, Math.min(100, s));
+  if (!issues.length) issues.push('基本合格, 还有优化空间');
+  imp.push('1. 加 3-5 个量化数据 (例: 运营公众号 3 个月, 阅读量 500→5000)');
+  imp.push('2. 用 STAR 法重写每段 (情境-任务-行动-结果)');
+  imp.push('3. 关键词对齐: 把 ' + t + ' JD 高频词嵌入简历');
+  imp.push('4. 删"负责 XX 工作"废话, 改"主导/策划/优化"');
+  imp.push('5. 长度: 1 页 (3 年内) / 2 页 (5 年以上)');
+  showOutput('o4', `=== 评分: ${s}/100 ===\n\n⚠️ 主要问题:\n${issues.map((x, i) => `${i+1}. ${x}`).join('\n')}\n\n✅ 改进建议:\n${imp.join('\n')}\n\n=== 优化后示例 ===\n张三 | 5 年${t}经验 | 130-xxxx-xxxx\n\n核心成果:\n- 主导 3 个百万级项目, 总营收 ¥800 万\n- 团队从 3 人扩到 12 人, 0 流失\n- 客户满意度 78% → 95%\n\n工作经历:\n某科技公司 | 高级${t} | 2021-2024\n- 重构运营体系, 月活 10 万 → 35 万 (+250%)\n- 主导上线 5 个新功能, 其中 2 个成为公司主推\n- 带 3 人小组, OKR 完成率 100%\n\n💡 收费: 简历评分 ¥29 / 优化 ¥99-199 / 优化+模拟面试 ¥299-499\n闲鱼挂出当天可出单, 月稳定 50+ 单 = 月入 ¥5000+`);
+}
+
+function runSys5() {
+  const p = document.getElementById('i5_purpose').value.trim() || '用途';
+  const b = document.getElementById('i5_buyer').value.trim() || '买家';
+  showOutput('o5', `=== 入门包 ¥9.9 ===\n${p} 基础 5 件套: 通用模板 + 3 风格变体 + 简易说明\n目标客户: 第一次买, 试试看\n转化率: 15-25%\n\n=== 爆款包 ¥29-49 ===\n${p} 进阶 15 件套:\n- 5 细分场景 prompt\n- 5 钩子型 prompt\n- 5 转化型 prompt\n- 配套发布模板 (小红书/抖音/朋友圈)\n- 30 天答疑\n目标客户: 认真做的, 复购率最高\n转化率: 40-60%\n\n=== 商业包 ¥99-199 ===\n${p} 商业级 30 件套:\n- 20 细分场景\n- 5 行业定制\n- SOP + 数据追踪\n- 60 天持续更新\n- 90 天新增 10 套\n目标客户: 团队/MCN/批量做号\n转化率: 5-10% 但客单高\n\n=== 闲鱼挂车文案 (直接抄) ===\n标题: "AI 提示词包 | ${p} 30 件套 | 9.9 起 | 持续更新"\n价格: ¥9.9 / ¥29 / ¥99 三档\n描述: 直接复制上面 3 个包内容 + 配图\n\n💡 1 个包卖 100 份 = ¥990-9900, 纯被动收入`);
 }
 </script>
-
-
-</html>
-
-
-</html>
-
-<div class="paypal-buy-buttons" style="background: linear-gradient(135deg, #0070ba 0%, #003087 100%); padding: 30px; border-radius: 12px; margin: 30px 0; color: white;">
-<h3 style="color:white; text-align:center; margin-bottom:8px;">🅿️ PayPal 一键购买(直接付款)</h3>
-<p style="text-align:center; opacity:0.9; margin-bottom:20px;">点下面任一档,直接用 PayPal 或信用卡付款。付完邮箱自动发资料。</p>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; max-width: 900px; margin: 0 auto;">
-<a href="https://paypal.me/hzylw/9" target="_blank" rel="noopener" style="background:white; color:#003087; padding:14px; border-radius:8px; text-decoration:none; text-align:center; font-weight:700;">
-<div style="font-size:1.4rem; font-weight:900;">$9</div>
-<div style="font-size:0.85rem; opacity:0.7;">HirePilot</div>
-</a>
-<a href="https://paypal.me/hzylw/29" target="_blank" rel="noopener" style="background:white; color:#003087; padding:14px; border-radius:8px; text-decoration:none; text-align:center; font-weight:700;">
-<div style="font-size:1.4rem; font-weight:900;">$29</div>
-<div style="font-size:0.85rem; opacity:0.7;">单系统</div>
-</a>
-<a href="https://paypal.me/hzylw/99" target="_blank" rel="noopener" style="background:#ffc439; color:#003087; padding:14px; border-radius:8px; text-decoration:none; text-align:center; font-weight:700; box-shadow: 0 4px 12px rgba(255,196,57,0.4);">
-<div style="font-size:1.4rem; font-weight:900;">$99</div>
-<div style="font-size:0.85rem; opacity:0.7;">5 系统包(最热销)</div>
-</a>
-<a href="https://paypal.me/hzylw/199" target="_blank" rel="noopener" style="background:white; color:#003087; padding:14px; border-radius:8px; text-decoration:none; text-align:center; font-weight:700;">
-<div style="font-size:1.4rem; font-weight:900;">$199</div>
-<div style="font-size:0.85rem; opacity:0.7;">+ 白标转售</div>
-</a>
-</div>
-<p style="text-align:center; opacity:0.8; margin-top:16px; font-size:0.9rem;">支持 PayPal / Visa / Master / Amex。付款后 24 小时内邮箱发货。</p>
-</div>
-
-
-
-</html>
-<footer style="background:#1a1a1a; color:white; padding:50px 20px; margin-top:60px;">
-<div style="max-width:1100px; margin:0 auto;">
-<h3 style="text-align:center; margin-bottom:30px; font-size:1.4rem;">🚀 All AI Money Kit Products</h3>
-<div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:20px; margin-bottom:30px;">
-<a href="https://lwy907919-a11y.github.io/hirepilot/" style="background:#2a2a2a; color:white; padding:16px; border-radius:8px; text-decoration:none; display:block;">
-<strong>🎯 HirePilot</strong>
-<p style="font-size:0.85rem; opacity:0.8; margin-top:6px;">8-step AI interview + ATS score. $9-99.</p>
-</a>
-<a href="https://lwy907919-a11y.github.io/hirepilot-freescore/" style="background:#2a2a2a; color:white; padding:16px; border-radius:8px; text-decoration:none; display:block;">
-<strong>📊 HirePilot FreeScore</strong>
-<p style="font-size:0.85rem; opacity:0.8; margin-top:6px;">Free 30-sec resume score. No signup.</p>
-</a>
-<a href="https://lwy907919-a11y.github.io/ai-money-kit/" style="background:#2a2a2a; color:white; padding:16px; border-radius:8px; text-decoration:none; display:block;">
-<strong>💰 AI Money Kit</strong>
-<p style="font-size:0.85rem; opacity:0.8; margin-top:6px;">5 turnkey AI business systems. $49-499.</p>
-</a>
-<a href="https://lwy907919-a11y.github.io/ai-money-kit-free/" style="background:#2a2a2a; color:white; padding:16px; border-radius:8px; text-decoration:none; display:block;">
-<strong>🆓 AIMK Free Tool</strong>
-<p style="font-size:0.85rem; opacity:0.8; margin-top:6px;">Try 1 of 5 systems. Free, no signup.</p>
-</a>
-<a href="https://lwy907919-a11y.github.io/ai-money-kit-members/" style="background:#2a2a2a; color:white; padding:16px; border-radius:8px; text-decoration:none; display:block;">
-<strong>🔒 AIMK Members</strong>
-<p style="font-size:0.85rem; opacity:0.8; margin-top:6px;">5 systems FULL + white-label rights.</p>
-</a>
-<a href="https://lwy907919-a11y.github.io/buy/" style="background:#f5576c; color:white; padding:16px; border-radius:8px; text-decoration:none; display:block; border:2px solid #f5576c;">
-<strong>🛒 Buy (4 Tiers)</strong>
-<p style="font-size:0.85rem; opacity:0.9; margin-top:6px;">$9-199 one-time. No subscription.</p>
-</a>
-<a href="https://lwy907919-a11y.github.io/compare-resume-tools/" style="background:#2a2a2a; color:white; padding:16px; border-radius:8px; text-decoration:none; display:block;">
-<strong>⚖️ HirePilot vs Others</strong>
-<p style="font-size:0.85rem; opacity:0.8; margin-top:6px;">Honest 2026 comparison.</p>
-</a>
-<a href="https://lwy907919-a11y.github.io/compare-ai-tools/" style="background:#2a2a2a; color:white; padding:16px; border-radius:8px; text-decoration:none; display:block;">
-<strong>⚖️ AIMK vs Jasper</strong>
-<p style="font-size:0.85rem; opacity:0.8; margin-top:6px;">AIMK vs Jasper vs Copy.ai vs Notion.</p>
-</a>
-<a href="https://lwy907919-a11y.github.io/ai-money-kit-cn/" style="background:#ee0979; color:white; padding:16px; border-radius:8px; text-decoration:none; display:block; border:2px solid #ee0979;">
-<strong>🇨🇳 中国版 (AI 赚钱工具包)</strong>
-<p style="font-size:0.85rem; opacity:0.9; margin-top:6px;">中文版,支付宝/微信,¥29-199</p>
-</a>
-<a href="https://lwy907919-a11y.github.io/ai-money-kit-cn-free/" style="background:#fff5f8; color:#ee0979; padding:16px; border-radius:8px; text-decoration:none; display:block; border:2px solid #ee0979;">
-<strong>🆓 中文免费工具</strong>
-<p style="font-size:0.85rem; opacity:0.9; margin-top:6px;">5 系统提示词,免费生成</p>
-</a>
-<a href="https://lwy907919-a11y.github.io/thanks/" style="background:#10b981; color:white; padding:16px; border-radius:8px; text-decoration:none; display:block; border:2px solid #10b981;">
-<strong>✅ 付款成功页</strong>
-<p style="font-size:0.85rem; opacity:0.9; margin-top:6px;">付款后自动跳转</p>
-</a>
-<a href="https://lwy907919-a11y.github.io/refund/" style="background:#2a2a2a; color:white; padding:16px; border-radius:8px; text-decoration:none; display:block;">
-<strong>💰 退款政策</strong>
-<p style="font-size:0.85rem; opacity:0.8; margin-top:6px;">30 天无理由</p>
-</a>
-<a href="https://lwy907919-a11y.github.io/terms/" style="background:#2a2a2a; color:white; padding:16px; border-radius:8px; text-decoration:none; display:block;">
-<strong>📜 服务条款</strong>
-<p style="font-size:0.85rem; opacity:0.8; margin-top:6px;">使用前必读</p>
-</a>
-<a href="https://lwy907919-a11y.github.io/refund-cn/" style="background:#2a2a2a; color:#ee0979; padding:16px; border-radius:8px; text-decoration:none; display:block; border:1px solid #ee0979;">
-<strong>🇨🇳 退款政策(中文)</strong>
-<p style="font-size:0.85rem; opacity:0.8; margin-top:6px;">7 天无理由</p>
-</a>
-</div>
-<div style="text-align:center; opacity:0.7; font-size:0.9rem; padding-top:20px; border-top:1px solid #444;">
-<p>© 2026 AI Money Kit by Hzylw. All products one-time payment, no subscription.</p>
-<p>Questions? <a href="mailto:lwy907919@gmail.com" style="color:#f5576c;">lwy907919@gmail.com</a></p>
-</div>
-</div>
-</footer>
 </body>
 </html>
